@@ -14,14 +14,27 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="logo col-md-6 fs-1 text-center d-block p-5 mt-5 align-middle">bing<span>me</span></div>
-            <div class="fs-6">hello</div>
-            <form>
-
-            </form>
-        </div>
        
+        <div class="logo text-center fs-1 d-block p-5 mt-5 align-middle">bing<span>me</span></div>
+        <div class="d-flex flex-column col-sm-10 col-md-8 col-lg-6 col-xl-4 m-auto">
+            <form>
+                <div>
+                    <label for="email" class="form-label"></label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" aria-required="true">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label"></label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" aria-required="true">
+                    <div class="form-text">Forgot your password?</div>
+                </div>
+                <div class="text-center mb-5">
+                    <button type="submit" class="btn btn-success w-50">Log In</button>  
+                </div>
+                
+            </form>
+            <hr>
+            <div class="btn btn-outline-success w-50 m-auto">Create Account</div>
+        </div>
     </div>
    
     

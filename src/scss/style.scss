@@ -3,11 +3,11 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 .logo {
-    color: $teal;
+    color: lighten($success, 10);
     font-family: $logoFont;
    
     span {
-        color: darken($teal, 15);
+        color: $success;
     }
 }
 body {
