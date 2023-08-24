@@ -1,0 +1,15 @@
+
+@import './variables'; 
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.logo {
+    color: $teal;
+    font-family: $logoFont;
+   
+    span {
+        color: darken($teal, 15);
+    }
+}
+body {
+    font-family: $bodyFont;
+}
