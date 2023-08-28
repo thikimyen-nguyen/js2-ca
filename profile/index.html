@@ -27,25 +27,30 @@
     </header>
     <main>
         <div class="container">
-            <div class="d-flex flex-row flex-sm-column align-items-center col-sm-6">
-                <img class="col-5 col-sm-8 rounded-circle custom-border m-2" src="../asset/images/myavatar.jpg" alt="yen nguyen frontend developer">
-                <div class="text-left col-7 col-sm-12 text-sm-center ms-3">
-                    <h1 class="mb-3">Yen Nguyen</h1>
-                    <button class="btn btn-follow fs-3">Follow</button>
+            <div class="d-flex flex-row  align-items-center col-sm-6">
+                <div class="col-5 col-sm-8 position-relative">
+                    <img class=" col-12 rounded-circle custom-border m-2" src="../asset/images/myavatar.jpg" alt="yen nguyen frontend developer">
+                    <i class="bi bi-pencil-square fs-1 position-absolute custom-position translate-middle"></i>
+                </div>
+                
+                <div class="text-left col-7 col-sm-12 text-sm-center ms-5">
+                    <h1 class="mb-3">Your Name</h1>
+                    <button class="btn btn-follow fs-3 w-50">Follow</button>  
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="text-center col-5 custom-card followers">
+               
+                <div class="text-center col-5 custom-card followers position-relative">
                     <div>
-                        <p>Followers</p>
+                        <p class="fs-4">Followers</p>
                         <p>150</p>
                     </div>
-                    <!-- <div class="followers-decor"></div> -->
+                    <div class="followers-decor position-absolute "></div>
                    
                 </div>
                 <div class="text-center col-5 custom-card following">
                     <div>
-                        <p>Following</p>
+                        <p class="fs-4">Following</p>
                         <p>50</p>
                     </div>
                   

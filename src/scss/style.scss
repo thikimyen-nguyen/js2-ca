@@ -19,7 +19,7 @@ body {
     font-family: $bodyFont;
 }
 .btn-custom:hover {
-    background-color: lighten($success, 15);
+    background-color: $light-success;
 }
 i {
     color: $success;
@@ -30,16 +30,20 @@ a {
 
 // profile image
 .custom-border {
-    border: 2px solid $success;
+    border: 1px solid $success;
     padding: 5px;
 }
+.custom-position {
+    top: 80%;
+    left: 90%;
+}
 .btn-follow {
-    background-color: lighten($success, 20);
+    background-color: $light-success;
    
 }
 .custom-card {
     align-self: center;
-    padding: 1rem;
+    padding: 0.5rem;
     margin: 0.2rem;
     p {
         margin: 0;
@@ -49,10 +53,23 @@ a {
 .followers {
     background-color: $success;
     color: white;
-   
+    border: 1px solid $success;
+    border-left: transparent;
    
 }
 .following {
-    border: 2px solid $success;
+    border: 1px solid $success;
     color: $success;
+    border-left: none;
+   
+}
+
+.followers-decor {
+    width: 0;             
+    height: 0;
+    border-left: -10px solid transparent;   
+    border-right: 70px solid transparent; 
+    border-bottom: 85px solid $light-success;   
+    top: 0;
+    left: 0;
 }
