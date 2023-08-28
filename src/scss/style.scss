@@ -5,11 +5,12 @@
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 .logo {
     color: lighten($success, 10);
     font-family: $logoFont;
-   
+    font-size: $big-logo-size;
     span {
         color: $success;
     }
@@ -19,4 +20,7 @@ body {
 }
 .btn-custom:hover {
     background-color: lighten($success, 15);
+}
+i {
+    color: $success;
 }
