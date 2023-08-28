@@ -24,3 +24,35 @@ body {
 i {
     color: $success;
 }
+a {
+    text-decoration: none;
+}
+
+// profile image
+.custom-border {
+    border: 2px solid $success;
+    padding: 5px;
+}
+.btn-follow {
+    background-color: lighten($success, 20);
+   
+}
+.custom-card {
+    align-self: center;
+    padding: 1rem;
+    margin: 0.2rem;
+    p {
+        margin: 0;
+    }
+}
+
+.followers {
+    background-color: $success;
+    color: white;
+   
+   
+}
+.following {
+    border: 2px solid $success;
+    color: $success;
+}
