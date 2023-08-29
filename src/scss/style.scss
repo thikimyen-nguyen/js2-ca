@@ -43,7 +43,7 @@ a {
 }
 .custom-card {
     align-self: center;
-    padding: 0.5rem;
+    padding: 0.2rem;
     margin: 0.2rem;
     p {
         margin: 0;
@@ -69,7 +69,7 @@ a {
     height: 0;
     border-left: -10px solid transparent;   
     border-right: 60px solid transparent; 
-    border-bottom: 70px solid $light-success;   
+    border-bottom: 60px solid $light-success;   
     top: 0;
     left: 0;
 }
