@@ -8,21 +8,21 @@
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 .logo {
-    color: lighten($success, 10);
+    color: lighten($primary, 10);
     font-family: $logoFont;
     font-size: $big-logo-size;
     span {
-        color: $success;
+        color: $primary;
     }
 }
 body {
     font-family: $bodyFont;
 }
 .btn-custom:hover {
-    background-color: $light-success;
+    background-color: $light-primary;
 }
 i {
-    color: $success;
+    color: $primary;
 }
 a {
     text-decoration: none;
@@ -30,36 +30,27 @@ a {
 
 // profile image
 .custom-border {
-    border: 1px solid $success;
-    padding: 5px;
+    border: 1px solid $primary;
 }
 .custom-position {
     top: 80%;
     left: 90%;
 }
 .btn-follow {
-    background-color: $light-success;
+    background-color: $light-primary;
    
-}
-.custom-card {
-    align-self: center;
-    padding: 0.2rem;
-    margin: 0.2rem;
-    p {
-        margin: 0;
-    }
 }
 
 .followers {
-    background-color: $success;
+    background-color: $primary;
     color: white;
-    border: 1px solid $success;
+    border: 1px solid $primary;
     border-left: transparent;
    
 }
 .following {
-    border: 1px solid $success;
-    color: $success;
+    border: 1px solid $primary;
+    color: $primary;
     border-left: none;
    
 }
@@ -69,7 +60,13 @@ a {
     height: 0;
     border-left: -10px solid transparent;   
     border-right: 40px solid transparent; 
-    border-bottom: 60px solid $light-success;   
+    border-bottom: 60px solid $light-primary;   
     top: 0;
     left: 0;
+}
+.custom-background {
+    background-color: $light-primary;
+}
+.custom-cover-bottom {
+    top: 70%;
 }

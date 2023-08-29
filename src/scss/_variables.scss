@@ -1,8 +1,8 @@
 $logoFont: 'ADLaM Display', sans-serif;
 $bodyFont: 'Quicksand', sans-serif;
-$success:  teal;
-$form-text-color: darken($success, 10);
-$light-success: lighten($success,15);
+$primary:  teal;
+$form-text-color: darken($primary, 10);
+$light-primary: lighten($primary,15);
 $font-size-base: 1rem;
 $big-logo-size: $font-size-base * 5;
 
