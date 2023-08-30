@@ -8,7 +8,7 @@
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
 .logo {
-    color: lighten($primary, 10);
+    color: $light-primary;
     font-family: $logoFont;
     font-size: $big-logo-size;
     span {
