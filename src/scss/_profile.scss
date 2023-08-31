@@ -1,15 +1,39 @@
 
 // profile image
-.custom-border {
-    border: 1px solid $primary;
+.custom-avatar-shape {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid $primary; 
 }
-.custom-position {
+.custom-avatar {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; 
+    position: relative;
+   
+   
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.custom-edit-icon {
     top: 80%;
     left: 90%;
 }
 .btn-follow {
-    background-color: $light-primary;
-   
+   background-color: $light-primary;
+//    border: 2px solid $primary;
+//    border-radius: 50%;
+//    :hover {
+//     background-color: red;
+//    }
 }
 
 .followers {
