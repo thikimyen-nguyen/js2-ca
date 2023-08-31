@@ -12,7 +12,6 @@
     padding-bottom: 100%; 
     position: relative;
    
-   
     img {
         position: absolute;
         top: 0;
@@ -27,15 +26,8 @@
     top: 80%;
     left: 90%;
 }
-.btn-follow {
-   background-color: $light-primary;
-//    border: 2px solid $primary;
-//    border-radius: 50%;
-//    :hover {
-//     background-color: red;
-//    }
-}
 
+// profile info
 .followers {
     background-color: $primary;
     color: white;

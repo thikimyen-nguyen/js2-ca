@@ -47,10 +47,6 @@
   left: 90%;
 }
 
-.btn-follow {
-  background-color: #00cdcd;
-}
-
 .followers {
   background-color: teal;
   color: white;
@@ -2055,7 +2051,7 @@ progress {
 .form-text {
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #004d4d;
+  color: #001a1a;
 }
 
 .form-control {
@@ -18631,10 +18627,6 @@ textarea.form-control-lg {
 
 body {
   font-family: "Quicksand", sans-serif;
-}
-
-.btn-custom:hover {
-  background-color: #00cdcd;
 }
 
 i {
