@@ -46,17 +46,18 @@
                     </div> -->
                     <div class=" d-flex flex-row justify-content-evenly flex-md-column  ">
                         <div class="text-center col-3 col-md-12 align-self-center sidebar p-1 m-1  position-relative">
+                              
+                            <div class="sidebar-decor  position-absolute d-none d-sm-block"></div>
                             <p class="m-0"><i class="bi bi-images me-2"></i>Photos</p>
-                           
-                            <div class="sidebar-decor  position-absolute "></div>
+                         
                         </div>
                         <div class="text-center col-3 col-md-12 align-self-center p-1 m-1 sidebar position-relative">
                             <p class="m-0"><i class="bi bi-people-fill me-2"></i>Friends</p>
-                            <div class="sidebar-decor  position-absolute "></div>
+                            <div class="sidebar-decor  position-absolute d-none d-sm-block"></div>
                         </div>
                         <div class="text-center col-3 col-md-12 align-self-center p-1 m-1 sidebar position-relative">
                             <p class="m-0"><i class="bi bi-chat-fill me-2"></i>Messages</p>
-                            <div class="sidebar-decor  position-absolute "></div>
+                            <div class="sidebar-decor  position-absolute d-none d-sm-block"></div>
                         </div>
                     </div>
                    
@@ -79,7 +80,17 @@
                     </div>
                     <!-- list of posts -->
                     <div class="bg-white p-2 mb-3">
-                        <h1>New Feeds</h1>
+                        <div class="d-flex flex-row justify-content-between">
+                            <h1 class="col-5">New Feeds</h1>
+                            <!-- sort option -->
+                            <select class="form-select custom-sort" aria-label="sort options">
+                                <option selected>--Sort</option>
+                                <option value="1">Newest</option>
+                                <option value="2">Oldest</option>
+                                <option value="3">With shared links</option>
+                              </select>
+                        </div>
+                      
                         <hr>
                         <div class="d-flex flex-row align-items-center">
                             <div class="col-1">
