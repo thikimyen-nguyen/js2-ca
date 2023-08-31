@@ -1,0 +1,37 @@
+
+// profile image
+.custom-border {
+    border: 1px solid $primary;
+}
+.custom-position {
+    top: 80%;
+    left: 90%;
+}
+.btn-follow {
+    background-color: $light-primary;
+   
+}
+
+.followers {
+    background-color: $primary;
+    color: white;
+    border: 1px solid $primary;
+    border-left: transparent;
+   
+}
+.following {
+    border: 1px solid $primary;
+    color: $primary;
+    border-left: none;
+   
+}
+
+.followers-decor {
+    width: 0;             
+    height: 0;
+    border-left: -10px solid transparent;   
+    border-right: 40px solid transparent; 
+    border-bottom: 60px solid $light-primary;   
+    top: 0;
+    left: 0;
+}

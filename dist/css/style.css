@@ -1,11 +1,69 @@
 @charset "UTF-8";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+.sidebar-decor {
+  width: 0;
+  height: 0;
+  border-left: -10px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid teal;
+  top: 0;
+  left: 0;
+}
+
+.sidebar {
+  background-color: white;
+  color: teal;
+  border: 1px solid teal;
+  border-left: transparent;
+}
+.sidebar :hover {
+  background-color: #00cdcd;
+  color: white;
+  cursor: pointer;
+}
+
+.custom-border {
+  border: 1px solid teal;
+}
+
+.custom-position {
+  top: 80%;
+  left: 90%;
+}
+
+.btn-follow {
+  background-color: #00cdcd;
+}
+
+.followers {
+  background-color: teal;
+  color: white;
+  border: 1px solid teal;
+  border-left: transparent;
+}
+
+.following {
+  border: 1px solid teal;
+  color: teal;
+  border-left: none;
+}
+
+.followers-decor {
+  width: 0;
+  height: 0;
+  border-left: -10px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 60px solid #00cdcd;
+  top: 0;
+  left: 0;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -18546,28 +18604,6 @@ textarea.form-control-lg {
   content: "\f8cc";
 }
 
-.sidebar-decor {
-  width: 0;
-  height: 0;
-  border-left: -10px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 35px solid teal;
-  top: 0;
-  left: 0;
-}
-
-.sidebar {
-  background-color: white;
-  color: teal;
-  border: 1px solid teal;
-  border-left: transparent;
-}
-.sidebar :hover {
-  background-color: #00cdcd;
-  color: white;
-  cursor: pointer;
-}
-
 .logo {
   color: #009a9a;
   font-family: "ADLaM Display", sans-serif;
@@ -18593,48 +18629,8 @@ a {
   text-decoration: none;
 }
 
-.custom-border {
-  border: 1px solid teal;
-}
-
-.custom-position {
-  top: 80%;
-  left: 90%;
-}
-
-.btn-follow {
-  background-color: #00cdcd;
-}
-
-.followers {
-  background-color: teal;
-  color: white;
-  border: 1px solid teal;
-  border-left: transparent;
-}
-
-.following {
-  border: 1px solid teal;
-  color: teal;
-  border-left: none;
-}
-
-.followers-decor {
-  width: 0;
-  height: 0;
-  border-left: -10px solid transparent;
-  border-right: 40px solid transparent;
-  border-bottom: 60px solid #00cdcd;
-  top: 0;
-  left: 0;
-}
-
 .custom-background {
   background-color: #00cdcd;
-}
-
-.custom-cover-bottom {
-  top: 70%;
 }
 
 /*# sourceMappingURL=style.css.map */
