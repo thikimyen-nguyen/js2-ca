@@ -1,11 +1,8 @@
 @charset "UTF-8";
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 .sidebar-decor {
-  width: 0;
-  height: 0;
   border-right: 20px solid transparent;
   border-bottom: 35px solid teal;
-  top: 0;
   left: -1px;
 }
 
