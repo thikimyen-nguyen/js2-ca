@@ -43,9 +43,8 @@
 }
 
 .followers-decor {
-    width: 0;             
-    height: 0;
-    border-left: -10px solid transparent;   
+   
+    // border-left: -10px solid transparent;   
     border-right: 40px solid transparent; 
     border-bottom: 60px solid $light-primary;   
     top: 0;
