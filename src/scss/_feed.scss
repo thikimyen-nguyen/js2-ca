@@ -1,0 +1,17 @@
+.sidebar-decor {
+   
+    border-right: 20px solid transparent; 
+    border-bottom: 35px solid $primary;   
+    left: -1px;
+}
+.sidebar {
+    background-color: white;
+    color: $primary;
+    border: 1px solid $primary;
+   
+   :hover {
+        background-color: $light-primary;
+        color: white;
+        cursor: pointer;
+   }
+}

@@ -1,15 +1,35 @@
 
-@import './variables'; 
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "variables"; 
+@import "feed";
+@import "profile";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
 
 .logo {
-    color: $teal;
+    color: lighten($primary, 5);
     font-family: $logoFont;
-   
+    font-size: $big-logo-size;
     span {
-        color: darken($teal, 15);
+        color: $primary;
     }
 }
 body {
     font-family: $bodyFont;
+}
+
+i {
+    color: $primary;
+}
+a {
+    text-decoration: none;
+}
+
+.custom-background {
+    background-color: $light-primary;
 }
