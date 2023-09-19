@@ -1,5 +1,5 @@
 // landing page
-
+// switch forms
 const loginForm = document.querySelector(".login");
 const createAccountForm = document.querySelector(".create-acc");
 const switchToCreateAccBtn = document.querySelector(".switch-create-acc-btn");
