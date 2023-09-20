@@ -15,8 +15,7 @@
 </head>
 <body>
     <div class="container">
-       
-        <div class="logo text-center d-block p-5 mt-5 align-middle">bing<span>me</span></div>
+        <div class="logo text-center d-block p-5 mt-5 ">bing<span>me</span></div>
         <div class="login d-flex flex-column col-sm-10 col-md-8 col-lg-6 col-xl-4 m-auto">
             <form action="/profile/index.html" class="needs-validation">
                 <div class="mb-4">
@@ -49,27 +48,27 @@
                 <div class="mb-4">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" name="username" id="username" placeholder="john" aria-required="true" required>
-                    <div class="invalid-feedback">
-                        Please enter your username.
+                    <div class="invalid-feedback" id="name_error">
+                        Please enter your username (Min 05 characters).
                     </div>
                 </div>
                 <div class="mb-4">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="youremail@mail.com" aria-required="true" required>
-                    <div class="invalid-feedback">
-                        Please type your email.
+                    <input type="email" class="form-control" name="email" id="email-register" placeholder="youremail@mail.com" aria-required="true" required>
+                    <div class="invalid-feedback" id="email_error">
+                        Please enter a valid email @noroff.no
                     </div>
                 </div>
                 <div class="mb-4">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Min 08 characters" aria-required="true" minlength="8" required>
-                    <div class="invalid-feedback">
-                        Please enter your password.
+                    <input type="password" class="form-control" name="password" id="password-register" placeholder="Min 08 characters" aria-required="true" minlength="8" required>
+                    <div class="invalid-feedback" id="password_error">
+                        Password must be min 08 characters.
                     </div>
                     
                 </div>
                 <div class="text-center mb-5">
-                    <button type="submit" class="btn btn-primary w-50">Create Acccount</button>
+                    <button type="submit" class="btn btn-primary w-50" id="createAcc-btn">Create Acccount</button>
                 </div>
             </form>
             <hr>
@@ -80,6 +79,6 @@
    <footer class="mt-5">
         <div class="p-5 text-center">&copy; All rights reserved.</div>
    </footer>
-    
+   <script src="js/form-validate.js"></script>
 </body>
 </html>
