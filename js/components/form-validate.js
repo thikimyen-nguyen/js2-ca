@@ -5,26 +5,6 @@ const email = document.querySelector("#email-register");
 const emailError = document.querySelector("#email_error");
 const password = document.querySelector("#password-register");
 const passwordError = document.querySelector("#password_error");
-const submitButton = document.querySelector("#createAcc-btn");
-
-
-submitButton.onclick = function validateRegisterForm(event) {
-    event.preventDefault();
-    validateUserName(userName);
-    validateEmail(email);
-    validatePassword(password);
-   
-
-    if (validateUserName(userName) &&  validateEmail(email) && validatePassword(password)) {
-     
-        const userRegisterInfo = {
-            userName: userName.value,
-            email: email.value,
-            password: password.value,
-       };
-       return userRegisterInfo;
-    }
-}
 
 // Validate username
 function checkLength(value, len) {
@@ -46,7 +26,7 @@ function validateUserName(userName) {
 }
 // Validate email
 function validateEmail(email) {
-    const regEx = /\S+@noroff\.no$/;
+    const regEx = /\S+@stud.noroff\.no$/;
     const patternMatches = regEx.test(email.value);
  
     if (patternMatches === true) {
@@ -71,3 +51,5 @@ function validatePassword(password) {
         return false;
     }
 }
+export {validateUserName, validateEmail, validatePassword, userName, email, password}
+

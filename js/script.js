@@ -1,5 +1,5 @@
-// landing page
-// switch forms
+
+// switch forms between create account and login
 const loginForm = document.querySelector(".login");
 const createAccountForm = document.querySelector(".create-acc");
 const switchToCreateAccBtn = document.querySelector(".switch-create-acc-btn");
@@ -15,7 +15,4 @@ swithToLoginBtn.onclick = function () {
 }
 
 // Create Account
-const baseUrl = " https://api.noroff.dev";
-const registerEndpoint = "/api/v1/social/auth/register";
 
-// get input information
