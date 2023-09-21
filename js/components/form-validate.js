@@ -5,7 +5,10 @@ const email = document.querySelector("#email-register");
 const emailError = document.querySelector("#email_error");
 const password = document.querySelector("#password-register");
 const passwordError = document.querySelector("#password_error");
-
+const emailLogin = document.querySelector("#email-login");
+const emailLoginError = document.querySelector("#email-login-error");
+const loginPassword = document.querySelector("#login-password");
+// Create accoutn form
 // Validate username
 function checkLength(value, len) {
     if (value.trim().length > len) {
@@ -24,7 +27,7 @@ function validateUserName(userName) {
         return false;
     }
 }
-// Validate email
+// Validate register email
 function validateEmail(email) {
     const regEx = /\S+@stud.noroff\.no$/;
     const patternMatches = regEx.test(email.value);
@@ -51,5 +54,22 @@ function validatePassword(password) {
         return false;
     }
 }
-export {validateUserName, validateEmail, validatePassword, userName, email, password}
 
+// log in form
+
+// validate email login
+function validateLoginEmail(emailLogin) {
+    const regEx = /\S+@stud.noroff\.no$/;
+    const patternMatches = regEx.test(emailLogin.value);
+ 
+    if (patternMatches === true) {
+       
+        emailLoginError.style.display = "none";
+        return true;
+    } else {
+        emailLoginError.style.display = "block";
+        return false;
+    }
+}
+
+export {validateUserName, validateEmail, validatePassword, userName, email, password, validateLoginEmail, emailLogin, loginPassword}

@@ -17,24 +17,24 @@
     <div class="container">
         <div class="logo text-center d-block p-5 mt-5 ">bing<span>me</span></div>
         <div class="login d-flex flex-column col-sm-10 col-md-8 col-lg-6 col-xl-4 m-auto">
-            <form action="/profile/index.html" class="needs-validation">
+            <form class="needs-validation">
                 <div class="mb-4">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="youremail@mail.com" aria-required="true" required>
-                    <div class="invalid-feedback">
-                        Please type your email.
+                    <label for="email-login" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email-login" id="email-login" placeholder="youremail@mail.com" aria-required="true" required>
+                    <div class="invalid-feedback" id="email-login-error">
+                        Please enter an valid email.
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Min 08 characters" aria-required="true" minlength="8" required>
+                    <label for="login-password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="login-password" id="login-password" placeholder="Min 08 characters" aria-required="true" minlength="8" required>
                     <div class="invalid-feedback">
-                        Please enter your password.
+                        Please enter correct password.
                     </div>
                     
                 </div>
                 <div class="text-center mb-5">
-                    <button type="submit" class="btn btn-primary w-50">Log In</button>
+                    <button type="submit" class="btn btn-primary w-50" id="login-btn">Log In</button>
                     <div class="form-text">Forgot your password?</div>  
                 </div>
                 
