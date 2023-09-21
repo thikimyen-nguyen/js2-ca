@@ -1,4 +1,4 @@
 const baseUrl = "https://api.noroff.dev";
-const registerEndpoint = "/social/auth/register";
+const registerEndpoint = "/api/v1/social/auth/register";
 const registerUrl = baseUrl + registerEndpoint;
 export {registerUrl}
