@@ -1,8 +1,25 @@
 import {validateUserName, validateEmail, validatePassword, userName, email, password, emailLogin, loginPassword } from "./components/form-validate.js";
 import { registerUrl, loginUrl } from "./components/api-fetch.js";
-const createAccButton = document.querySelector("#createAcc-btn");
-const loginButton = document.querySelector("#login-btn");
+
+
+// switch forms between create account and login
+const loginForm = document.querySelector(".login");
+const createAccountForm = document.querySelector(".create-acc");
+const switchToCreateAccBtn = document.querySelector(".switch-create-acc-btn");
+const swithToLoginBtn = document.querySelector(".switch-login-btn");
+loginForm.classList.add("d-none");
+switchToCreateAccBtn.onclick = function switchToCreateAcc() {
+    loginForm.classList.add("d-none");
+    createAccountForm.classList.remove("d-none");
+};
+swithToLoginBtn.onclick = function () {
+    loginForm.classList.remove("d-none");
+    createAccountForm.classList.add("d-none");
+}
+
 // Create account
+const createAccButton = document.querySelector("#createAcc-btn");
+
 createAccButton.onclick = function validateRegister(event) {
     event.preventDefault();
     validateUserName(userName);
@@ -41,6 +58,7 @@ createAccButton.onclick = function validateRegister(event) {
 }
 
 // Login
+const loginButton = document.querySelector("#login-btn");
 loginButton.onclick = function validateLogin(event) {
     event.preventDefault();
     const userLoginInfo = {
