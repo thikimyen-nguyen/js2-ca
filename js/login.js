@@ -96,7 +96,7 @@ loginButton.onclick = function validateLogin(event) {
 // Redirect to feed page after login successful
 function checkToken() {
     const accessToken = localStorage.getItem("accessToken");
-    if (accessToken) {
+    if (accessToken) {gi
         window.location.href = "./feed/index.html"
     }
 }
