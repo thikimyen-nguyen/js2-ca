@@ -59,36 +59,44 @@ createAccButton.onclick = function validateRegister(event) {
 
 // Login
 const loginButton = document.querySelector("#login-btn");
+
+// Fetch post login data
+const userLoginInfo = {
+    "email": emailLogin.value,
+    "password": loginPassword.value,
+};
+
+async function loginUser(url, data) {
+    try {
+        const postData = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        };
+        const response = await fetch(url, postData);
+        const json = await response.json();
+        const accessToken = json.accessToken;
+        localStorage.setItem('accessToken', accessToken);
+        return json;
+    } catch (error) {
+        console.log(error);
+    }
+    }
+
+// Log in process
 loginButton.onclick = function validateLogin(event) {
     event.preventDefault();
-    const userLoginInfo = {
-        "email": emailLogin.value,
-        "password": loginPassword.value,
-    };
-    console.log(userLoginInfo);
-    async function loginUser(url, data) {
-        try {
-            const postData = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-            };
-            const response = await fetch(url, postData);
-            const json = await response.json();
-            const accessToken = json.accessToken;
-            localStorage.setItem('accessToken', accessToken);
-            if (response.ok) {
-                // redirect to feed/index.html
-                window.location.href = "./feed/index.html"
-            }
-            return json;
-        } catch (error) {
-            console.log(error);
-        }
-        }
-        loginUser(loginUrl, userLoginInfo);
+    loginUser(loginUrl, userLoginInfo);
+    checkToken();
+}
 
-   
+
+// Redirect to feed page after login successful
+function checkToken() {
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken) {
+        window.location.href = "./feed/index.html"
+    }
 }
