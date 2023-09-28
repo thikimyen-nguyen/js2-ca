@@ -1,6 +1,6 @@
-const baseUrl = "https://api.noroff.dev";
-const registerEndpoint = "/api/v1/social/auth/register";
-const loginEndpoint = "/api/v1/social/auth/login";
+const baseUrl = "https://api.noroff.dev/api/v1";
+const registerEndpoint = "/social/auth/register";
+const loginEndpoint = "/social/auth/login";
 const registerUrl = baseUrl + registerEndpoint;
 const loginUrl = baseUrl + loginEndpoint;
 

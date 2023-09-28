@@ -58,18 +58,18 @@ function validatePassword(password) {
 // log in form
 
 // validate email login
-function validateLoginEmail(emailLogin) {
-    const regEx = /\S+@stud.noroff\.no$/;
-    const patternMatches = regEx.test(emailLogin.value);
+// function validateLoginEmail(emailLogin) {
+//     const regEx = /\S+@stud.noroff\.no$/;
+//     const patternMatches = regEx.test(emailLogin.value);
  
-    if (patternMatches === true) {
+//     if (patternMatches === true) {
        
-        emailLoginError.style.display = "none";
-        return true;
-    } else {
-        emailLoginError.style.display = "block";
-        return false;
-    }
-}
+//         emailLoginError.style.display = "none";
+//         return true;
+//     } else {
+//         emailLoginError.style.display = "block";
+//         return false;
+//     }
+// }
 
-export {validateUserName, validateEmail, validatePassword, userName, email, password, validateLoginEmail, emailLogin, loginPassword}
+export {validateUserName, validateEmail, validatePassword, userName, email, password, emailLogin, loginPassword }

@@ -1,4 +1,4 @@
-import {validateUserName, validateEmail, validatePassword, userName, email, password, validateLoginEmail, emailLogin, loginPassword } from "./components/form-validate.js";
+import {validateUserName, validateEmail, validatePassword, userName, email, password, emailLogin, loginPassword } from "./components/form-validate.js";
 import { registerUrl, loginUrl } from "./components/api-fetch.js";
 const createAccButton = document.querySelector("#createAcc-btn");
 const loginButton = document.querySelector("#login-btn");
@@ -43,33 +43,34 @@ createAccButton.onclick = function validateRegister(event) {
 // Login
 loginButton.onclick = function validateLogin(event) {
     event.preventDefault();
-    validateLoginEmail(emailLogin);
-
-    if (validateLoginEmail(emailLogin)) {
-        const userLoginInfo = {
-            "email": emailLogin.value,
-            "password": loginPassword.value,
-        };
-        console.log(userLoginInfo);
-        async function loginUser(url, data) {
-            try {
-              const postData = {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-              };
-              const response = await fetch(url, postData);
-              const json = await response.json();
-              const accessToken = json.accessToken;
-              localStorage.setItem('accessToken', accessToken);
-              return json;
-            } catch (error) {
-              console.log(error);
+    const userLoginInfo = {
+        "email": emailLogin.value,
+        "password": loginPassword.value,
+    };
+    console.log(userLoginInfo);
+    async function loginUser(url, data) {
+        try {
+            const postData = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+            };
+            const response = await fetch(url, postData);
+            const json = await response.json();
+            const accessToken = json.accessToken;
+            localStorage.setItem('accessToken', accessToken);
+            if (response.ok) {
+                // redirect to feed/index.html
+                window.location.href = "./feed/index.html"
             }
-          }
-          loginUser(loginUrl, userLoginInfo);
-    }
+            return json;
+        } catch (error) {
+            console.log(error);
+        }
+        }
+        loginUser(loginUrl, userLoginInfo);
+
    
 }
