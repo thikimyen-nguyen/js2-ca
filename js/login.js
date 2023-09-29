@@ -61,10 +61,6 @@ createAccButton.onclick = function validateRegister(event) {
 const loginButton = document.querySelector("#login-btn");
 
 // Fetch post login data
-const userLoginInfo = {
-    "email": emailLogin.value,
-    "password": loginPassword.value,
-};
 
 async function loginUser(url, data) {
     try {
@@ -79,6 +75,10 @@ async function loginUser(url, data) {
         const json = await response.json();
         const accessToken = json.accessToken;
         localStorage.setItem('accessToken', accessToken);
+        // Redirect to feed page
+        if (accessToken) {
+                window.location.href = "./feed/index.html"
+            }
         return json;
     } catch (error) {
         console.log(error);
@@ -86,17 +86,14 @@ async function loginUser(url, data) {
     }
 
 // Log in process
-loginButton.onclick = function validateLogin(event) {
+
+loginButton.addEventListener("click", getLoginUser);
+function getLoginUser(event) {
     event.preventDefault();
+    const userLoginInfo = {
+        "email": emailLogin.value,
+        "password": loginPassword.value,
+    };
     loginUser(loginUrl, userLoginInfo);
-    checkToken();
 }
 
-
-// Redirect to feed page after login successful
-function checkToken() {
-    const accessToken = localStorage.getItem("accessToken");
-    if (accessToken) {
-        window.location.href = "./feed/index.html"
-    }
-}
