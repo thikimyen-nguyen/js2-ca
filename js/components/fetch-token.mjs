@@ -5,7 +5,7 @@ const getData = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${givenToken}`,
     },
-    
+   
   };
 
   
