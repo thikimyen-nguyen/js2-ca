@@ -1,5 +1,5 @@
-import {validateUserName, validateEmail, validatePassword, userName, email, password, emailLogin, loginPassword } from "./components/form-validate.js";
-import { registerUrl, loginUrl } from "./components/api-fetch.js";
+import {validateUserName, validateEmail, validatePassword, userName, email, password, emailLogin, loginPassword } from "./components/form-validate.mjs";
+import { registerUrl, loginUrl } from "./components/api-fetch.mjs";
 
 
 // switch forms between create account and login

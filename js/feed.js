@@ -1,5 +1,5 @@
-import { getFeedPostsUrl } from "../js/components/api-fetch.js";
-import { fetchWithToken } from "../js/components/fetch-token.js";
+import { getFeedPostsUrl } from "./components/api-fetch.mjs";
+import { fetchWithToken } from "./components/fetch-token.mjs";
 console.log(getFeedPostsUrl);
 fetchWithToken(getFeedPostsUrl);
 
