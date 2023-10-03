@@ -24,7 +24,25 @@ async function getPosts(url) {
     for (let i = 0; i < posts.length; i++) {
         const {title, body, author} = posts[i];
         const {name} = author;
-        console.log(name);
+        // console.log(name);
+        // post header
+        const postHeadContainer = document.createElement("div");
+        postHeadContainer.classList.add("d-flex", "flex-row", "align-items-center");
+        // post header - avatar
+        const postAvatar = document.createElement("div");
+        postAvatar.classList.add("custom-avatar-shape", "col-1");
+        const authorAvatar = document.createElement("div");
+        authorAvatar.classList.add("custom-avatar");
+        const authorImage = document.createElement("img");
+        authorImage.src = "../asset/images/pexels-rachel-claire-4993220.jpg";
+        authorImage.alt = "sample avatar";
+        authorAvatar.append(authorImage);
+        postAvatar.append(authorAvatar);
+        postHeadContainer.append(postAvatar);
+
+       
+
+        // post content
         postsContainer.classList.add("pt-3")
         const content = document.createElement("div");
         const postTitle = document.createElement("h5");
@@ -32,7 +50,9 @@ async function getPosts(url) {
         postTitle.innerText = title;
         postBody.innerText = body;
         postsContainer.append(content);
-        content.append(postTitle, postBody);
+
+        // show full post
+        content.append(postHeadContainer,postTitle, postBody);
       
     }
   }
