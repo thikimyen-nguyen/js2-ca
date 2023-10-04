@@ -13,23 +13,26 @@ filterCoontainer.ariaLabel = "filter options";
 
 // options to filter
 const defaultOption = document.createElement("option");
-defaultOption.textContent = '--Filter';
-defaultOption.setAttribute('selected', 'true');
+defaultOption.textContent = "All Posts";
+defaultOption.value = "all";
 
-const option1 = document.createElement("option");
-option1.classList.add("option1");
-option1.value = "1";
-option1.textContent = "Food Posts";
-
+const optionOne = document.createElement("option");
+optionOne.classList.add("optionOne");
+optionOne.value = "food";
+optionOne.textContent = "Food Posts";
+const optionTwo = document.createElement("option");
+optionTwo.classList.add("optionTwo");
+optionTwo.value = "game";
+optionTwo.textContent = "Game Posts";
 
 
 function newFeedsHtml() {
-    filterCoontainer.append(defaultOption, option1);
+    filterCoontainer.append(defaultOption, optionOne, optionTwo);
 
     feedContainer.append(newFeeds, filterCoontainer);
 }
 
-export {newFeedsHtml, option1}
+export {newFeedsHtml}
 
 // get active posts
 

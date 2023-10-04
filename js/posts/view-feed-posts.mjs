@@ -99,4 +99,4 @@ async function getPosts(url) {
         postsContentContainer.append(content);
     }
   }
-  export {showPosts}
+  export {showPosts, postsContentContainer}
