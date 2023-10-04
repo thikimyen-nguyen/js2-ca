@@ -1,2 +1,3 @@
 import { showPosts } from "./posts/view-feed-posts.mjs";
- showPosts();
+import {  getFeedPostsUrl} from "./components/api-url.mjs";
+ showPosts(getFeedPostsUrl);

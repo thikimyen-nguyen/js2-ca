@@ -18,11 +18,11 @@ async function getPosts(url) {
     }
   }
 
-  async function showPosts() {
-    const posts = await getPosts(getFeedPostsUrl);
+  async function showPosts(url) {
+    const posts = await getPosts(url);
     console.log(posts)
     for (let i = 0; i < posts.length; i++) {
-        const {title, body, author, created, _count} = posts[i];
+        const {title, body, author, created, _count, media} = posts[i];
         const {name, avatar} = author;
         const {comments, reactions} = _count;
         // post header
@@ -62,9 +62,13 @@ async function getPosts(url) {
         content.classList.add("p-3", "bg-white", "mb-2");
         const postTitle = document.createElement("h5");
         const postBody = document.createElement("p");
+        const postMedia = document.createElement("img");
+        postMedia.classList.add("w-100", "w-md-50")
         postTitle.innerText = title;
         postBody.innerText = body;
-        postsContentContainer.append(content);
+        postMedia.src = media;
+        postMedia.alt = "user post image";
+        
 
         //  post reaction - show like/comments
         const showReaction = document.createElement("div");
@@ -90,8 +94,9 @@ async function getPosts(url) {
         shareIcon.innerText = "Share";
         reactionsContainer.append(likeIcon, commentIcon, shareIcon);
         // show full post
-        content.append(postHeadContainer,postTitle, postBody, showReaction, breakLine, reactionsContainer);
-      
+        
+        content.append(postHeadContainer,postTitle, postBody, postMedia, showReaction, breakLine, reactionsContainer);
+        postsContentContainer.append(content);
     }
   }
   export {showPosts}
