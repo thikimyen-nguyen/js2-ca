@@ -1,4 +1,4 @@
-import { getFeedPostsUrl } from "../components/api-url.mjs";
+
 import { getData } from "../components/fetch-token.mjs";
 import { timeAgo } from "../components/time-calculator.mjs";
 
@@ -18,9 +18,8 @@ async function getPosts(url) {
     }
   }
 
-  async function showPosts() {
-    const posts = await getPosts(getFeedPostsUrl);
-    console.log(posts)
+  async function showPosts(url) {
+    const posts = await getPosts(url);
     for (let i = 0; i < posts.length; i++) {
         const {title, body, author, created, _count} = posts[i];
         const {name, avatar} = author;
