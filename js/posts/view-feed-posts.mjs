@@ -34,7 +34,7 @@ async function getPosts(url) {
         const authorAvatar = document.createElement("div");
         authorAvatar.classList.add("custom-avatar");
         const authorImage = document.createElement("img");
-        if (avatar === null) {
+        if (avatar === null || !avatar) {
             authorImage.src = "../asset/images/pexels-rachel-claire-4993220.jpg";
         } else {
             authorImage.src = avatar;
