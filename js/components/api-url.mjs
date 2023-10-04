@@ -5,6 +5,8 @@ const feedPostsEndpoint = "/social/posts?_author=true";
 const registerUrl = baseUrl + registerEndpoint;
 const loginUrl = baseUrl + loginEndpoint;
 const getFeedPostsUrl = baseUrl + feedPostsEndpoint;
-const activePostsEndpoint = "/social/posts?_author=true&_active=true";
-const getActivePostsUrl = baseUrl + activePostsEndpoint;
-export {registerUrl, loginUrl, getFeedPostsUrl, getActivePostsUrl}
+const foodPostsEndpoint = "/social/posts?_author=true&_active=true&_tag=food";
+const getFoodPostsUrl = baseUrl + foodPostsEndpoint;
+const lifePostsEndpoint = "/social/posts?_author=true&_active=true&_tag=life";
+const getLifePostsUrl = baseUrl + lifePostsEndpoint;
+export {registerUrl, loginUrl, getFeedPostsUrl, getFoodPostsUrl, getLifePostsUrl}

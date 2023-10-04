@@ -1,4 +1,4 @@
-import { getActivePostsUrl } from "../components/api-url.mjs";
+import { getFoodPostsUrl } from "../components/api-url.mjs";
 import { getData } from "../components/fetch-token.mjs";
 
 // Create HTML for newfeeds filter
@@ -19,7 +19,7 @@ defaultOption.setAttribute('selected', 'true');
 const option1 = document.createElement("option");
 option1.classList.add("option1");
 option1.value = "1";
-option1.textContent = "Active Posts";
+option1.textContent = "Food Posts";
 
 
 

@@ -11,7 +11,7 @@ async function getPosts(url) {
         const response = await fetch(url, getData);
         // console.log(response);
         const posts = await response.json();
-       
+       console.log(posts)
         return posts;
     } catch (error) {
         console.log(error);
