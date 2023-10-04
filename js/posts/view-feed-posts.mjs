@@ -1,4 +1,4 @@
-import { getFeedPostsUrl } from "../components/api-fetch.mjs";
+import { getFeedPostsUrl } from "../components/api-url.mjs";
 import { getData } from "../components/fetch-token.mjs";
 import { timeAgo } from "../components/time-calculator.mjs";
 
