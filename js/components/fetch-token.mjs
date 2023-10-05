@@ -1,5 +1,5 @@
 const givenToken = localStorage.getItem("accessToken");
-// get data with token
+// get method with token
 const getData = {
     method: 'GET',
     headers: {
