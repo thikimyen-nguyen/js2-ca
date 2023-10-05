@@ -1,4 +1,4 @@
-import { showPosts, postsContentContainer, getPosts } from "./posts/view-feed-posts.mjs";
+import { showPosts, postsContentContainer } from "./posts/view-feed-posts.mjs";
 import { newFeedsHtml} from "./posts/filter.mjs";
 import { getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl } from "./components/api-url.mjs";
 
