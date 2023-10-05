@@ -15,13 +15,10 @@ filterCoontainer.ariaLabel = "filter options";
 const defaultOption = document.createElement("option");
 defaultOption.textContent = "All Posts";
 defaultOption.value = "all";
-
 const optionOne = document.createElement("option");
-optionOne.classList.add("optionOne");
 optionOne.value = "food";
 optionOne.textContent = "Food Posts";
 const optionTwo = document.createElement("option");
-optionTwo.classList.add("optionTwo");
 optionTwo.value = "game";
 optionTwo.textContent = "Game Posts";
 
