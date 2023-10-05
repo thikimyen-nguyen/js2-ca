@@ -20,5 +20,25 @@ try {
     console.log(error);
 }
 }
-  
-export {givenToken, getData, getPosts}
+
+// post method data with token
+
+async function createPost(url, data) {
+  try {
+    const postData = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${givenToken}`,
+      },
+      body: JSON.stringify(data),
+    };
+
+    const response = await fetch(url, postData);
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.log(error);
+  }
+}
+export {givenToken, getData, getPosts, createPost}
