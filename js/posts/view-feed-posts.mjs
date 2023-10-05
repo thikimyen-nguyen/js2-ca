@@ -66,7 +66,11 @@ async function getPosts(url) {
         postMedia.classList.add("w-100", "w-md-50")
         postTitle.innerText = title;
         postBody.innerText = body;
-        postMedia.src = media;
+        if (media === null || !media) {
+            postMedia.style.display = "none";
+        } else {
+            postMedia.src = media;
+        }
         postMedia.alt = "user post image";
         
 
