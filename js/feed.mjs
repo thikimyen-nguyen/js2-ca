@@ -2,9 +2,10 @@ import { showPosts, postsContentContainer } from "./posts/view-feed-posts.mjs";
 import { newFeedsHtml} from "./posts/filter.mjs";
 import { getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl } from "./components/api-url.mjs";
 
+// Show new feeds area UI
 newFeedsHtml();
 
-// filter posts
+// filter and show posts
 const selectFilter = document.querySelector("select");
 
 async function showFeedHtml() {
@@ -24,3 +25,5 @@ async function showFeedHtml() {
     })
 }
 showFeedHtml();
+
+// UI for create post form

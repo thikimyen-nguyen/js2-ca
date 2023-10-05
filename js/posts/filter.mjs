@@ -31,5 +31,5 @@ function newFeedsHtml() {
 
 export {newFeedsHtml}
 
-// get active posts
+
 
