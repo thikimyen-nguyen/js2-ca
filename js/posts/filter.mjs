@@ -1,5 +1,3 @@
-import { getFoodPostsUrl } from "../components/api-url.mjs";
-import { getData } from "../components/fetch-token.mjs";
 
 // Create HTML for newfeeds filter
 const feedContainer = document.querySelector(".feeds");
@@ -31,5 +29,5 @@ function newFeedsHtml() {
 
 export {newFeedsHtml}
 
-// get active posts
+
 

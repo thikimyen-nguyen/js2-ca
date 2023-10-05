@@ -4,7 +4,7 @@ import { getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl } from "./components/
 
 newFeedsHtml();
 
-// filter posts
+// filter and show posts
 const selectFilter = document.querySelector("select");
 
 async function showFeedHtml() {
