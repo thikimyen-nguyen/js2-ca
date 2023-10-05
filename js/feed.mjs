@@ -1,7 +1,8 @@
 import { showPosts, postsContentContainer } from "./posts/view-feed-posts.mjs";
 import { newFeedsHtml} from "./posts/filter.mjs";
-import { getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl } from "./components/api-url.mjs";
-
+import { getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl, createPostUrl } from "./components/api-url.mjs";
+import { createPostForm, postForm} from "./posts/create-new-post.mjs";
+import { createPost } from "./components/fetch-token.mjs";
 // Show new feeds area UI
 newFeedsHtml();
 
@@ -26,23 +27,17 @@ async function showFeedHtml() {
 }
 showFeedHtml();
 
-// UI for create post form
-const addPostButton = document.querySelector(".add-post-button");
-const postForm = document.querySelector(".create-post-form");
-const cancelFormButton = document.querySelector("#cancel-form-button");
+// show form to create post
+createPostForm();
 
-
-postForm.classList.add("d-none");
-
-addPostButton.addEventListener("click", function showForm() {
-  postForm.classList.remove("d-none");
-  postForm.classList.add("d-block");
-  addPostButton.classList.add("d-none");
-})
-
-cancelFormButton.addEventListener("click", function hideForm() {
-  addPostButton.classList.remove("d-none");
-  addPostButton.classList.add("d-block");
-  postForm.classList.add("d-none");
+// get form input and post data to API
+postForm.addEventListener("submit", function getFormValue(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    const post = Object.fromEntries(formData.entries())
+    createPost(createPostUrl, post);
+    alert("Your post was created!");
+    window.location.reload();
+  })
   
-})
