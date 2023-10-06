@@ -46,6 +46,16 @@ async function showPosts(url) {
         
         const content = document.createElement("div");
         content.classList.add("p-3", "bg-white", "mb-2");
+        // add hover effect to a post
+        content.addEventListener("mouseover", function(){
+            content.style.cursor = "pointer";
+            content.classList.remove("bg-white");
+            content.style.backgroundColor = "#f8f9fa";
+        });
+        content.addEventListener("mouseout", function(){
+            content.classList.add("bg-white");
+        });
+        // 
         const postTitle = document.createElement("h5");
         const postBody = document.createElement("p");
         const postMedia = document.createElement("img");
@@ -89,4 +99,8 @@ async function showPosts(url) {
         postsContentContainer.append(content);
     }
   }
+
+
+  
+ 
   export {showPosts, postsContentContainer}
