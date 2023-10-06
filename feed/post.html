@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="feed page of bingme">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="../js/post.mjs" type="module" defer></script>
+    <title>bingme | Feeds </title>
+</head>
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="nav-brand logo fs-2 " href="../feed/index.html" >bing<span>me</span></a>
+                
+                <div  class="ms-auto">
+                    <ul class="nav align-items-center nav-tabs">
+                        <li class="nav-item nav-link  d-none d-md-block">
+                            <label class="d-none" for="search"></label>
+                            <input type="text" id="search" name="search" placeholder="Search..." class="form-control">
+                        </li>
+                        <li class="nav-item nav-link d-md-none"><a href="#"> <i class="bi bi-search-heart fs-2"></i></a></li>
+                        <li class="nav-item nav-link active"><a href="../feed/index.html">Feed</a></li>
+                        <li class="nav-item nav-link "><a href="../profile/index.html">Profile</a></li>
+                    </ul>
+                </div>    
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <!-- profile info sidebar for larger screen-->
+                <div class="col-12 col-xl-2 col-md-3">
+                    <a href="../profile/index.html" class="d-flex flex-row align-items-center mb-3">
+                        <div class="custom-avatar-shape col-2 col-md-3">
+                            <div class="custom-avatar">
+                                <img src="../asset/images/myavatar.webp" alt="yen nguyen frontend developer">
+                            </div>
+                        </div>
+                        <h5 class="col-10 p-2 ">Your Name</h5>
+                    </a>
+                    <div class=" d-flex flex-row justify-content-evenly flex-md-column  ">
+                        <div class="text-center col-3 col-md-12 align-self-center sidebar p-1 m-1  position-relative">
+                              
+                            <div class="sidebar-decor top-0 position-absolute d-none d-sm-block"></div>
+                            <p class="m-0"><i class="bi bi-images me-2"></i>Photos</p>
+                         
+                        </div>
+                        <div class="text-center col-3 col-md-12 align-self-center p-1 m-1 sidebar position-relative">
+                            <p class="m-0"><i class="bi bi-people-fill me-2"></i>Friends</p>
+                            <div class="sidebar-decor  top-0 position-absolute d-none d-sm-block"></div>
+                        </div>
+                        <div class="text-center col-3 col-md-12 align-self-center p-1 m-1 sidebar position-relative">
+                            <p class="m-0"><i class="bi bi-chat-fill me-2"></i>Chat</p>
+                            <div class="sidebar-decor  top-0 position-absolute d-none d-sm-block"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- display a single post-->
+                <div class="col-12 col-md-9 col-xl-10 custom-background p-2 mt-3">
+                    <div class="post"></div>
+                </div>
+            </div>
+        </div>
+       
+    </main>
+   <footer class="mt-5 bg-primary text-white">
+        <div class="p-5 text-center">&copy; Designed and Coded by Yen Nguyen. All rights reserved.</div>
+   </footer>
+    
+</body>
+</html>

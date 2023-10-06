@@ -11,4 +11,5 @@ const gamePostsEndpoint = "/social/posts?_author=true&_active=true&_tag=game";
 const getGamePostsUrl = baseUrl + gamePostsEndpoint;
 const postEndpoint = "/social/posts";
 const createPostUrl = baseUrl + postEndpoint;
-export {registerUrl, loginUrl, getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl, createPostUrl}
+const authorParam = "?_author=true";
+export {registerUrl, loginUrl, getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl, createPostUrl, authorParam}
