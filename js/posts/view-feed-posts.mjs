@@ -51,7 +51,7 @@ async function showPosts(url) {
         content.addEventListener("mouseover", function(){
             content.style.cursor = "pointer";
             content.classList.remove("bg-white");
-            content.style.backgroundColor = "#e9ecef";
+            content.style.backgroundColor = "#f8f9fa";
         });
         content.addEventListener("mouseout", function(){
             content.classList.add("bg-white");
