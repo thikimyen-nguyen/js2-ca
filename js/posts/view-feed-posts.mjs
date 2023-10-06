@@ -9,7 +9,7 @@ async function showPosts(url) {
     const posts = await getPosts(url);
     console.log(posts)
     for (let i = 0; i < posts.length; i++) {
-        const {title, body, author, created, _count, media} = posts[i];
+        const {title, body, author, created, _count, media, id} = posts[i];
         const {name, avatar} = author;
         const {comments, reactions} = _count;
         // post header
@@ -56,7 +56,12 @@ async function showPosts(url) {
         content.addEventListener("mouseout", function(){
             content.classList.add("bg-white");
         });
-        // 
+        // add parameter id to window.location
+        const postAnchor = document.createElement("a");
+        postAnchor.href = "post.html?id=" + id;
+        postAnchor.append(content);
+
+        // add post content
         const postTitle = document.createElement("h5");
         const postBody = document.createElement("p");
         const postMedia = document.createElement("img");
@@ -94,10 +99,11 @@ async function showPosts(url) {
         shareIcon.classList.add("bi", "bi-share");
         shareIcon.innerText = "Share";
         reactionsContainer.append(likeIcon, commentIcon, shareIcon);
+
         // show full post
         
         content.append(postHeadContainer,postTitle, postBody, postMedia, showReaction, breakLine, reactionsContainer);
-        postsContentContainer.append(content);
+        postsContentContainer.append(postAnchor);
     }
   }
 
