@@ -55,11 +55,10 @@ async function showPosts(url) {
         content.addEventListener("mouseout", function(){
             content.classList.add("bg-white");
         });
-        // add parameter id to window.location
-        const postAnchor = document.createElement("a");
-        postAnchor.href = "post.html?id=" + id;
-        postAnchor.append(content);
-
+        // relocate single post by id
+        content.addEventListener("click", function(){
+            window.location.href = "post.html?id=" + id;
+        })
         // add post content
         const postTitle = document.createElement("h5");
         const postBody = document.createElement("p");
@@ -102,7 +101,7 @@ async function showPosts(url) {
         // show full post
         
         content.append(postHeadContainer,postTitle, postBody, postMedia, showReaction, breakLine, reactionsContainer);
-        postsContentContainer.append(postAnchor);
+        postsContentContainer.append(content);
     }
   }
 
