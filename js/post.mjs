@@ -1,7 +1,7 @@
 import {authorParam, createPostUrl  } from "./components/api-url.mjs";
 import { getPosts, deletePost } from "./components/fetch-token.mjs";
 import { timeAgo } from "./components/time-calculator.mjs";
-import { showUserName } from "./profile/show-user.mjs";
+import { showUserName, currentUserName } from "./profile/show-user.mjs";
 
 // get id post and create single post id
 const querryString = document.location.search;
@@ -42,7 +42,12 @@ async function showSinglePost(url) {
   optionTwo.textContent = "Delete";
 
   postOptions.append(defaultOption, optionOne, optionTwo);
-
+  // display postOptions
+  if (name !== currentUserName) {
+    postOptions.classList.add("d-none");
+  } else {
+    postOptions.classList.remove("d-none");
+  }
   headContainer.append(postHead, postOptions);
   
   // post header - avatar
