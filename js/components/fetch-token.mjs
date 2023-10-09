@@ -41,4 +41,25 @@ async function createPost(url, data) {
     console.log(error);
   }
 }
-export {givenToken, getData, getPosts, createPost}
+
+// delete method with token
+async function deletePost(url, data) {
+  try {
+    const postData = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${givenToken}`,
+      },
+      body: JSON.stringify(data),
+    };
+
+    const response = await fetch(url, postData);
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export {givenToken, getData, getPosts, createPost, deletePost}

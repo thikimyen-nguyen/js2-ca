@@ -1,5 +1,5 @@
 import {authorParam, createPostUrl  } from "./components/api-url.mjs";
-import { getPosts } from "./components/fetch-token.mjs";
+import { getPosts, deletePost } from "./components/fetch-token.mjs";
 import { timeAgo } from "./components/time-calculator.mjs";
 import { showUserName } from "./profile/show-user.mjs";
 
@@ -9,6 +9,8 @@ const param = new URLSearchParams(querryString);
 const id = param.get("id");
 
 const postUrl = createPostUrl + "/" +id + authorParam;
+const deleteUrl = createPostUrl + "/" +id;
+console.log(deleteUrl)
 // show a single post
 const postContentContainer = document.querySelector(".post");
 async function showSinglePost(url) {
