@@ -18,11 +18,34 @@ async function showSinglePost(url) {
   const {name, avatar} = author;
   const {comments, reactions} = _count;
   // post header
-  const postHeadContainer = document.createElement("div");
-  postHeadContainer.classList.add("d-flex", "flex-row", "align-items-center");
+  const postHead = document.createElement("div");
+  postHead.classList.add("d-flex", "flex-row", "align-items-center", "col-8", "col-lg-10");
+
+  // add delete/edit functions html
+  const headContainer = document.createElement("div");
+  const postOptions = document.createElement("select");
+  headContainer.classList.add("d-flex", "flex-row", "col-12");
+  postOptions.classList.add("form-select", "custom-sort");
+  postOptions.ariaLabel = "filter options";
+
+  // options to filter
+  const defaultOption = document.createElement("option");
+  defaultOption.textContent = "Options";
+  defaultOption.value = "";
+  const optionOne = document.createElement("option");
+  optionOne.value = "delete";
+  optionOne.textContent = "Edit";
+  const optionTwo = document.createElement("option");
+  optionTwo.value = "delete";
+  optionTwo.textContent = "Delete";
+
+  postOptions.append(defaultOption, optionOne, optionTwo);
+
+  headContainer.append(postHead, postOptions);
+  
   // post header - avatar
   const postAvatar = document.createElement("div");
-  postAvatar.classList.add("custom-avatar-shape", "col-1");
+  postAvatar.classList.add("custom-avatar-shape", "col-2", "col-lg-1");
   const authorAvatar = document.createElement("div");
   authorAvatar.classList.add("custom-avatar");
   const authorImage = document.createElement("img");
@@ -36,7 +59,7 @@ async function showSinglePost(url) {
   postAvatar.append(authorAvatar);
   // post header - author content  
   const authorContainer = document.createElement("div");
-  authorContainer.classList.add("ps-2");
+  authorContainer.classList.add("ps-2", "col-12");
   const authorName = document.createElement("h4");
   authorName.classList.add("m-0", "font-weight-bold");
   const createdDate = document.createElement("p");
@@ -46,25 +69,13 @@ async function showSinglePost(url) {
   createdDate.innerText = timeAgo(created);
   authorContainer.append(authorName, createdDate);
   // append for post header
-  postHeadContainer.append(postAvatar, authorContainer);
+  postHead.append(postAvatar, authorContainer);
 
   // post content
   
   const content = document.createElement("div");
   content.classList.add("p-3", "bg-white", "mb-2");
-  // add hover effect to a post
-  content.addEventListener("mouseover", function(){
-      content.style.cursor = "pointer";
-      content.classList.remove("bg-white");
-      content.style.backgroundColor = "#f8f9fa";
-  });
-  content.addEventListener("mouseout", function(){
-      content.classList.add("bg-white");
-  });
-  // relocate single post by id
-  content.addEventListener("click", function(){
-      window.location.href = "post.html?id=" + id;
-  })
+  
   // add post content
   const postTitle = document.createElement("h5");
   const postBody = document.createElement("p");
@@ -106,7 +117,7 @@ async function showSinglePost(url) {
 
   // show full post
   
-  content.append(postHeadContainer,postTitle, postBody, postMedia, showReaction, breakLine, reactionsContainer);
+  content.append(headContainer, postTitle, postBody, postMedia, showReaction, breakLine, reactionsContainer);
   postContentContainer.append(content);
 }
 showSinglePost(postUrl);
