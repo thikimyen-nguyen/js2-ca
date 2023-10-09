@@ -12,4 +12,6 @@ const getGamePostsUrl = baseUrl + gamePostsEndpoint;
 const postEndpoint = "/social/posts";
 const createPostUrl = baseUrl + postEndpoint;
 const authorParam = "?_author=true";
-export {registerUrl, loginUrl, getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl, createPostUrl, authorParam}
+const profileEndpoint = "/social/profiles";
+const profileUrl = baseUrl + profileEndpoint;
+export {registerUrl, loginUrl, getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl, createPostUrl, authorParam, profileUrl}

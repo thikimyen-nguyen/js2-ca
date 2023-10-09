@@ -40,15 +40,13 @@
                     <div class="d-flex flex-row  align-items-center col-sm-6 col-md-12 flex-md-column">
                         <div class="col-5 col-sm-8 position-relative text-center">
                             <div class="custom-avatar-shape col-12">
-                                <div class="custom-avatar">
-                                    <img src="../asset/images/myavatar.webp" alt="yen nguyen frontend developer">
-                                </div>
+                                <div class="custom-avatar"></div>
                             </div>
                             <i class="bi bi-pencil-square fs-1 position-absolute custom-edit-icon translate-middle"></i>
                         </div>
                         
                         <div class="text-center col-7 col-sm-12 text-sm-center ">
-                            <h1 class="mb-3 user-name">Your Name</h1>
+                            <h1 class="mb-3 user-name"></h1>
                             <button class="btn btn-outline-primary">Follow</button>  
                         </div>
                     </div>
@@ -73,76 +71,34 @@
                 <!-- posting area -->
                 <div class="col-12 col-md-8 custom-background p-2 mt-3">
                     <div class="bg-white p-2 mb-3">
-                        <div>
-                            <div>
-                                <label for="writePost" class="form-label"></label>
-                                <textarea class="form-control" name="writePost" id="writePost" rows="3" placeholder="Write your posts here..."></textarea>
-                            </div>
-                            <div class="d-flex mt-2 justify-content-between">
-                                <button class="btn btn-primary">Add photos</button>
-                                <button class="btn btn-outline-primary">Share Post</button>
-                            </div>
-                         
+                        <div class="text-center">
+                            <button class="add-post-button btn btn-primary w-50">Add New Post</button>
                         </div>
+                        <form class="create-post-form needs-validation col-xl-6 justify-content-center m-auto">
+                            <div class="mb-4">
+                                <label for="title" class="form-label fs-4">Title</label>
+                                <input type="text" class="form-control" name="title" minlength="4" placeholder="Minimum 04 charaters" aria-required="true" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="body" class="form-label fs-4">Post Body</label>
+                                <input type="text" class="form-control" name="body" minlength="10" placeholder="Minimum 10 characters" aria-required="true">
+                            </div>
+                            <div class="mb-4">
+                                <label for="media" class="form-label fs-4">Media</label>
+                                <input type="url" class="form-control" name="media" placeholder="Url to your image" aria-required="true">
+                            </div>
+                            <div class="mb-4">
+                                <label for="tags" class="form-label fs-4">Tags</label>
+                                <input type="url" class="form-control" name="media" placeholder="Separate tags by commas , " aria-required="true">
+                            </div>
+                            <div class="text-center mb-5 w-100">
+                                <button class="btn btn-outline-primary" id="cancel-form-button">Cancel</button>
+                                <button type="submit" class="btn btn-primary" id="create-post-button">Create Post</button>
+                            </div>
+                        </form>
                     </div>
                     <!-- list of posts -->
-                    <div class="bg-white p-2 mb-3">
-                        <div class="d-flex flex-row align-items-center">
-                            <div class="custom-avatar-shape col-1">
-                                <div class="custom-avatar">
-                                    <img src="../asset/images/myavatar.webp" alt="yen nguyen frontend developer">
-                                </div>
-                            </div>
-                            <div class="ps-2">
-                                <p class="m-0 font-weight-bold">Your Name <span class="text-muted">shared a photo.</span></p>
-                                <p class="m-0 text-muted">12h <span><i class="bi bi-pencil-square fs-5"></i></span></p>
-                            </div>
-                        </div>
-                        <div class="pt-3">
-                            <p>This is my photo</p>
-                        </div>
-                        <div class="text-center p-2">
-                            <img class="img-fluid" src="../asset/images/pexels-rachel-claire-4993220.jpg" alt="photo of mountain"> 
-                               <!-- photo from https://www.pexels.com/photo/road-among-trees-against-snowy-mountains-4993220/ -->
-                        </div>
-                        <div class="d-flex flex-row justify-content-between">
-                            <i class="bi bi-heart-fill"> <span>150</span></i>
-                            <p>Comments <span>10</span></p>
-                        </div>
-                        <hr>
-                        <div class="d-flex flex-row justify-content-between">
-                            <i class="bi bi-hand-thumbs-up">Like</i>
-                            <i class="bi bi-chat-left-text">Comment</i> 
-                            <i class="bi bi-share">Share</i>
-                        </div>
-                    </div>
-                    <div class="bg-white p-2 mb-3">
-                        <div class="d-flex flex-row align-items-center">
-                            <div class="custom-avatar-shape col-1">
-                                <div class="custom-avatar">
-                                    <img src="../asset/images/myavatar.webp" alt="yen nguyen frontend developer">
-                                </div>
-                            </div>
-                            <div class="ps-2">
-                                <p class="m-0 font-weight-bold">Your Name <span class="text-muted">is feeling happy.</span></p>
-                                <p class="m-0 text-muted">2d <span><i class="bi bi-pencil-square fs-5"></i></span></p>
-                            </div>
-                        </div>
-                        <div class="pt-3">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit massa vel urna facilisis, non dictum nunc fringilla. Integer bibendum, libero sed pharetra venenatis, nunc tortor convallis erat, vel lacinia odio nisl ac odio. Sed nec tortor nec ligula tristique dapibus. Sed id ligula nec tortor fringilla imperdiet. Nullam auctor aliquet mi, a faucibus elit ullamcorper vel. </p>
-                        </div>
-                        <div class="d-flex flex-row justify-content-between">
-                            <i class="bi bi-heart-fill"> <span>150</span></i>
-                            <p>Comments <span>10</span></p>
-                        </div>
-                        <hr>
-                        <div class="d-flex flex-row justify-content-between">
-                            <i class="bi bi-hand-thumbs-up">Like</i>
-                            <i class="bi bi-chat-left-text">Comment</i>
-                            <i class="bi bi-share">Share</i>
-                        </div>
-                    </div>
-                   
+                    <div class="posts"></div>
                 </div>
             </div>
         </div>
