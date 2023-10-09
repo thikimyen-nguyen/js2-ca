@@ -57,7 +57,7 @@ async function showPosts(url) {
         });
         // relocate single post by id
         content.addEventListener("click", function(){
-            window.location.href = "post.html?id=" + id;
+            window.location.href = "../feed/post.html?id=" + id;
         })
         // add post content
         const postTitle = document.createElement("h5");
