@@ -1,6 +1,8 @@
 import {authorParam, createPostUrl  } from "./components/api-url.mjs";
 import { getPosts } from "./components/fetch-token.mjs";
 import { timeAgo } from "./components/time-calculator.mjs";
+import { showUserName } from "./profile/show-user.mjs";
+
 // get id post and create single post id
 const querryString = document.location.search;
 const param = new URLSearchParams(querryString);
@@ -108,3 +110,6 @@ async function showSinglePost(url) {
   postContentContainer.append(content);
 }
 showSinglePost(postUrl);
+
+// show current user
+showUserName();
