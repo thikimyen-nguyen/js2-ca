@@ -73,9 +73,10 @@ async function loginUser(url, data) {
         };
         const response = await fetch(url, postData);
         const json = await response.json();
-        const {accessToken, name} = json;
+        const {accessToken, name, avatar} = json;
         localStorage.setItem('accessToken', accessToken);
         localStorage.setItem("user", name);
+        localStorage.setItem("avatar", avatar);
         // Redirect to feed page
         if (accessToken) {
                 window.location.href = "./feed/index.html"
