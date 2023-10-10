@@ -43,7 +43,7 @@ async function createPost(url, data) {
 }
 
 // delete method with token
-async function deletePost(url, data) {
+async function deletePost(url) {
   try {
     const postData = {
       method: 'DELETE',
@@ -51,7 +51,7 @@ async function deletePost(url, data) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${givenToken}`,
       },
-      body: JSON.stringify(data),
+     
     };
 
     const response = await fetch(url, postData);

@@ -7,49 +7,71 @@ import { showUserName, currentUserName } from "./profile/show-user.mjs";
 const querryString = document.location.search;
 const param = new URLSearchParams(querryString);
 const id = param.get("id");
-
+// url to fetch
 const postUrl = createPostUrl + "/" +id + authorParam;
 const deleteUrl = createPostUrl + "/" +id;
-console.log(deleteUrl)
-// show a single post
+
+/** Show a single post
+ * Fetch a single post with url and id
+ * Get object
+ * Create html to display object
+ */
+
 const postContentContainer = document.querySelector(".post");
 async function showSinglePost(url) {
   const post = await getPosts(url);
-  console.log(post)
+  // Get post as object
   const {title, body, author, created, _count, media, id} = post;
   const {name, avatar} = author;
   const {comments, reactions} = _count;
+
   // post header
   const postHead = document.createElement("div");
   postHead.classList.add("d-flex", "flex-row", "align-items-center", "col-8", "col-lg-10");
 
-  // add delete/edit functions html
+  /** add delete/edit functions html
+   * Create html for options delete and edit post
+   * Display this function if post belongs to current user, display-none if not
+   * Create function with delete
+   * */ 
   const headContainer = document.createElement("div");
   const postOptions = document.createElement("select");
   headContainer.classList.add("d-flex", "flex-row", "col-12");
   postOptions.classList.add("form-select", "custom-sort");
   postOptions.ariaLabel = "filter options";
 
-  // options to filter
+  // Create html for options delete and edit post
   const defaultOption = document.createElement("option");
   defaultOption.textContent = "Options";
   defaultOption.value = "";
   const optionOne = document.createElement("option");
-  optionOne.value = "delete";
+  optionOne.value = "edit";
   optionOne.textContent = "Edit";
   const optionTwo = document.createElement("option");
   optionTwo.value = "delete";
   optionTwo.textContent = "Delete";
 
   postOptions.append(defaultOption, optionOne, optionTwo);
-  // display postOptions
+  // Display this function if post belongs to current user, display-none if not
   if (name !== currentUserName) {
     postOptions.classList.add("d-none");
   } else {
     postOptions.classList.remove("d-none");
   }
   headContainer.append(postHead, postOptions);
-  
+  // Create function with delete
+  postOptions.addEventListener("change", function() {
+    const selectedValue = postOptions.value;
+    if (selectedValue === "delete") {
+      deletePost(deleteUrl);
+      postContentContainer.innerHTML = "Your post was deleted!";
+      postContentContainer.classList.add("text-center");
+    } else if (selectedValue === "edit") {
+      console.log("ok");
+    }{
+      
+    }
+  })
   // post header - avatar
   const postAvatar = document.createElement("div");
   postAvatar.classList.add("custom-avatar-shape", "col-2", "col-lg-1");
@@ -126,6 +148,8 @@ async function showSinglePost(url) {
   
   content.append(headContainer, postTitle, postBody, postMedia, showReaction, breakLine, reactionsContainer);
   postContentContainer.append(content);
+  // Delete post
+
 }
 showSinglePost(postUrl);
 
