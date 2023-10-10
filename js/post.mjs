@@ -9,7 +9,7 @@ const param = new URLSearchParams(querryString);
 const id = param.get("id");
 // url to fetch
 const postUrl = createPostUrl + "/" +id + authorParam;
-const deleteUrl = createPostUrl + "/" +id;
+const editUrl = createPostUrl + "/" +id;
 
 /** Show a single post
  * Fetch a single post with url and id
@@ -18,6 +18,7 @@ const deleteUrl = createPostUrl + "/" +id;
  */
 
 const postContentContainer = document.querySelector(".post");
+const editForm = document.querySelector(".edit-post-form");
 // Hide update form
 const updateForm = document.querySelector(".update-form");
 updateForm.classList.add("d-none");
@@ -26,7 +27,7 @@ updateForm.classList.add("d-none");
 async function showSinglePost(url) {
   const post = await getPosts(url);
   // Get post as object
-  const {title, body, author, created, _count, media, id} = post;
+  const {title, body, author, created, _count, media, tags} = post;
   const {name, avatar} = author;
   const {comments, reactions} = _count;
 
@@ -64,17 +65,45 @@ async function showSinglePost(url) {
     postOptions.classList.remove("d-none");
   }
   headContainer.append(postHead, postOptions);
-  // Create function with delete
+  // Create function with delete/edit
   postOptions.addEventListener("change", function() {
     const selectedValue = postOptions.value;
     if (selectedValue === "delete") {
-      deletePost(deleteUrl);
+      deletePost(editUrl);
       postContentContainer.innerHTML = "Your post was deleted!";
       postContentContainer.classList.add("text-center");
     } else if (selectedValue === "edit") {
-      console.log("ok");
+      // hide post and show edit form
+      updateForm.classList.remove("d-none");
+      postContentContainer.classList.add("d-none");
+      
+      // Get current value from post and show in form
+      
+      editForm.title.value = title;
+      editForm.body.value = body;
+      editForm.media.value = media;
+      editForm.tags.value = tags;
+
     }
   })
+  // get form input and post data to API
+  editForm.addEventListener("submit", function getFormValue(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Convert the "tags" value to an array
+    const tags = formData.get("tags");
+    const tagsArray = tags.split(',').map(tag => tag.trim());
+
+    const updatedPost = Object.fromEntries(formData.entries());
+    updatedPost.tags = tagsArray;
+    console.log(updatedPost);
+    updatePost(editUrl, updatedPost);
+    alert("Your post was updated!");
+    window.location.reload();
+  })
+
   // post header - avatar
   const postAvatar = document.createElement("div");
   postAvatar.classList.add("custom-avatar-shape", "col-2", "col-lg-1");
@@ -160,3 +189,11 @@ showSinglePost(postUrl);
 
 // show current user
 showUserName();
+
+const cancelButton =  document.querySelector("#cancel-form-button");
+  cancelButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    updateForm.classList.add("d-none");
+    postContentContainer.classList.add("d-block");
+    window.location.reload();
+  })
