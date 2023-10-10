@@ -61,5 +61,23 @@ async function deletePost(url) {
     console.log(error);
   }
 }
+// Update post
+async function updatePost(url, data) {
+  try {
+    const postData = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${givenToken}`,
+      },
+      body: JSON.stringify(data),
+    };
 
-export {givenToken, getData, getPosts, createPost, deletePost}
+    const response = await fetch(url, postData);
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.log(error);
+  }
+}
+export {givenToken, getData, getPosts, createPost, deletePost, updatePost}

@@ -44,7 +44,7 @@
                                 <img src="../asset/images/myavatar.webp" alt="yen nguyen frontend developer">
                             </div>
                         </div>
-                        <h5 class="col-10 p-2 user-name">Your Name</h5>
+                        <h5 class="col-10 p-2 user-name"></h5>
                     </a>
                     <div class=" d-flex flex-row justify-content-evenly flex-md-column  ">
                         <div class="text-center col-3 col-md-12 align-self-center sidebar p-1 m-1  position-relative">
@@ -66,6 +66,32 @@
                 <!-- display a single post-->
                 <div class="col-12 col-md-9 col-xl-10 custom-background p-2 mt-3">
                     <div class="post"></div>
+                    <!-- form to edit post -->
+                    <div class="bg-white p-2 mb-3 update-form">
+                    
+                      <form class="create-post-form needs-validation col-xl-6 justify-content-center m-auto">
+                          <div class="mb-4">
+                              <label for="title" class="form-label fs-4">Title</label>
+                              <input type="text" class="form-control" name="title" minlength="4" placeholder="Minimum 04 charaters" aria-required="true" required>
+                          </div>
+                          <div class="mb-4">
+                              <label for="body" class="form-label fs-4">Post Body</label>
+                              <input type="text" class="form-control" name="body" minlength="10" placeholder="Minimum 10 characters" aria-required="true">
+                          </div>
+                          <div class="mb-4">
+                              <label for="media" class="form-label fs-4">Media</label>
+                              <input type="url" class="form-control" name="media" placeholder="Url to your image" aria-required="true">
+                          </div>
+                          <div class="mb-4">
+                              <label for="tags" class="form-label fs-4">Tags</label>
+                              <input type="text" class="form-control" name="tags" placeholder="Separate tags by commas , " aria-required="true">
+                          </div>
+                          <div class="text-center mb-5 w-100">
+                              <button class="btn btn-outline-primary" id="cancel-form-button">Cancel</button>
+                              <button type="submit" class="btn btn-primary" id="create-post-button">Update Post</button>
+                          </div>
+                      </form>
+                  </div>
                 </div>
             </div>
         </div>

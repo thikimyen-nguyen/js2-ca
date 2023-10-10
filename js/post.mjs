@@ -1,5 +1,5 @@
 import {authorParam, createPostUrl  } from "./components/api-url.mjs";
-import { getPosts, deletePost } from "./components/fetch-token.mjs";
+import { getPosts, deletePost, updatePost} from "./components/fetch-token.mjs";
 import { timeAgo } from "./components/time-calculator.mjs";
 import { showUserName, currentUserName } from "./profile/show-user.mjs";
 
@@ -18,6 +18,11 @@ const deleteUrl = createPostUrl + "/" +id;
  */
 
 const postContentContainer = document.querySelector(".post");
+// Hide update form
+const updateForm = document.querySelector(".update-form");
+updateForm.classList.add("d-none");
+
+// Fetch a single post with url and id
 async function showSinglePost(url) {
   const post = await getPosts(url);
   // Get post as object
@@ -68,8 +73,6 @@ async function showSinglePost(url) {
       postContentContainer.classList.add("text-center");
     } else if (selectedValue === "edit") {
       console.log("ok");
-    }{
-      
     }
   })
   // post header - avatar
@@ -150,7 +153,7 @@ async function showSinglePost(url) {
   
   content.append(headContainer, postTitle, postBody, postMedia, showReaction, breakLine, reactionsContainer);
   postContentContainer.append(content);
-  // Delete post
+ 
 
 }
 showSinglePost(postUrl);
