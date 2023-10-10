@@ -80,7 +80,9 @@ async function showSinglePost(url) {
   const postTitle = document.createElement("h5");
   const postBody = document.createElement("p");
   const postMedia = document.createElement("img");
-  postMedia.classList.add("w-100", "w-md-50")
+  postMedia.classList.add("w-100", "w-md-50");
+  postBody.classList.add("text-break");
+  postTitle.classList.add("text-break");
   postTitle.innerText = title;
   postBody.innerText = body;
   if (media === null || !media) {
