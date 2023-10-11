@@ -21,17 +21,23 @@
                 
                 <div  class="ms-auto">
                     <ul class="nav align-items-center nav-tabs">
-                        <li class="nav-item nav-link  d-none d-md-block">
-                            <label class="d-none" for="search"></label>
-                            <input type="text" id="search" name="search" placeholder="Search..." class="form-control">
-                        </li>
-                        <li class="nav-item nav-link d-md-none"><a href="#"> <i class="bi bi-search-heart fs-2"></i></a></li>
                         <li class="nav-item nav-link active"><a href="../feed/index.html">Feed</a></li>
                         <li class="nav-item nav-link "><a href="../profile/index.html">Profile</a></li>
                     </ul>
                 </div>    
             </div>
         </nav>
+        <div class="container mb-5 mt-5">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-lg-5 m-auto">
+                    <form class="d-flex flex-row">
+                        <label for="search"></label>
+                        <input type="text" id="search" name="search" placeholder="Search..." class="form-control">
+                        <button type="submit" class="btn btn-primary ms-1" id="search-button">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <div class="container">
@@ -42,7 +48,7 @@
                         <div class="custom-avatar-shape col-2 col-md-3">
                             <div class="custom-avatar"></div>
                         </div>
-                        <h5 class="col-10 p-2 user-name">Your Name</h5>
+                        <h5 class="col-10 p-2 user-name"></h5>
                     </a>
                     <div class=" d-flex flex-row justify-content-evenly flex-md-column  ">
                         <div class="text-center col-3 col-md-12 align-self-center sidebar p-1 m-1  position-relative">
@@ -94,6 +100,7 @@
                     <!-- feed area-->
                     <div class="feeds"></div>
                     <!-- list of posts-->
+                    <div class="search-results"></div>
                     <div class="posts"></div>
                 </div>
             </div>
