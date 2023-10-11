@@ -113,4 +113,4 @@ for (let i = 0; i < posts.length; i++) {
 
   
  
-  export {showPosts, postsHtml}
+  export {showPosts, postsHtml, postsContentContainer}
