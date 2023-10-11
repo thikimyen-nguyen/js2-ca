@@ -47,6 +47,10 @@ createAccButton.onclick = function validateRegister(event) {
           
               const response = await fetch(url, postData);
               const json = await response.json();
+              if (response.ok) {
+                loginForm.classList.remove("d-none");
+                createAccountForm.classList.add("d-none");
+              }
               return json;
             } catch (error) {
               console.log(error);
