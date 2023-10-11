@@ -1,7 +1,7 @@
 import {authorParam, createPostUrl  } from "./components/api-url.mjs";
 import { getPosts, deletePost, updatePost} from "./components/fetch-token.mjs";
 import { timeAgo } from "./components/time-calculator.mjs";
-import { showUserName, currentUserName } from "./profile/show-user.mjs";
+import { showUserName, currentUserName, showAvatar } from "./profile/show-user.mjs";
 
 // get id post and create single post id
 const querryString = document.location.search;
@@ -197,3 +197,4 @@ const cancelButton =  document.querySelector("#cancel-form-button");
     postContentContainer.classList.add("d-block");
     window.location.reload();
   })
+showAvatar();

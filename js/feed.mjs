@@ -3,7 +3,7 @@ import { newFeedsHtml} from "./posts/filter.mjs";
 import { getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl, createPostUrl } from "./components/api-url.mjs";
 import { createPostForm, postForm} from "./posts/create-new-post.mjs";
 import { createPost } from "./components/fetch-token.mjs";
-import { showUserName } from "./profile/show-user.mjs";
+import { showUserName, showAvatar } from "./profile/show-user.mjs";
 // Show new feeds area UI
 newFeedsHtml();
 
@@ -51,3 +51,4 @@ postForm.addEventListener("submit", function getFormValue(event) {
   
 // show current user
 showUserName();
+showAvatar();
