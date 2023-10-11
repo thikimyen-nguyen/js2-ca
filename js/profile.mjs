@@ -1,8 +1,9 @@
 import { showUserName, showTitle, showAvatar, currentUserName } from "./profile/show-user.mjs";
 import { createPostForm, postForm} from "./posts/create-new-post.mjs";
 import { createPost } from "./components/fetch-token.mjs";
-import { showPosts, postsContentContainer } from "./posts/view-feed-posts.mjs";
+import { showPosts, postsContentContainer,postsHtml} from "./posts/view-feed-posts.mjs";
 import { profileUrl, authorParam, createPostUrl} from "./components/api-url.mjs";
+import { getSearchResults } from "./posts/search.mjs";
 // show current user
 showUserName();
 showTitle();
@@ -29,3 +30,7 @@ postForm.addEventListener("submit", function getFormValue(event) {
 // show user posts only
 const currentUserUrl = `${profileUrl}/${currentUserName}/posts${authorParam}`;
 showPosts(currentUserUrl);
+
+
+// search funtion
+getSearchResults();

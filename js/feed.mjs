@@ -1,11 +1,11 @@
-import { showPosts, postsContentContainer, postsHtml } from "./posts/view-feed-posts.mjs";
+import { showPosts, postsContentContainer} from "./posts/view-feed-posts.mjs";
 import { newFeedsHtml} from "./posts/filter.mjs";
 import { getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl, createPostUrl } from "./components/api-url.mjs";
 import { createPostForm, postForm} from "./posts/create-new-post.mjs";
 import { createPost } from "./components/fetch-token.mjs";
 import { showUserName, showAvatar } from "./profile/show-user.mjs";
-import { search } from "./posts/search.mjs";
-import { feedContainer} from "./posts/filter.mjs";
+import { getSearchResults } from "./posts/search.mjs";
+
 // Show new feeds area UI
 newFeedsHtml();
 
@@ -57,21 +57,5 @@ showAvatar();
 
 
 
-// get input search and pass as param
-const searchInput = document.querySelector(".search-form");
-c
-
-searchInput.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const searchValue = event.target.search.value;
-  const results = search(searchValue);
-  const numberOfResults = results.length;
-  console.log(numberOfResults)
-  searchInput.reset();
-  postsContentContainer.innerHTML = "";
-  feedContainer.classList.add("text-center", "text-primary", "fs-3");
-  feedContainer.innerHTML = `${numberOfResults} results were found.`;
-    postsHtml(results);
-  
-
-})
+// search funtion
+getSearchResults();

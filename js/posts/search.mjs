@@ -3,6 +3,8 @@
  * create function to filter posts with param
  * get input search and pass as param
  */
+ import { feedContainer} from "./filter.mjs";
+ import { postsHtml, postsContentContainer } from "./view-feed-posts.mjs";
 
 // get source of posts to be searched
 const posts = JSON.parse(localStorage.getItem("currentPosts"));
@@ -20,5 +22,22 @@ function search(param) {
   return filteredPosts
 }
 
-
-export {search}
+// get input search and pass as param
+const searchInput = document.querySelector(".search-form");
+function getSearchResults() {
+    searchInput.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const searchValue = event.target.search.value;
+        const results = search(searchValue);
+        const numberOfResults = results.length;
+        searchInput.reset();
+      //   display in html
+        postsContentContainer.innerHTML = "";
+        feedContainer.classList.add("text-primary", "fs-3");
+        feedContainer.innerHTML = `${numberOfResults} results were found.`;
+          postsHtml(results);
+        
+      
+      })
+}
+export {search, getSearchResults}
