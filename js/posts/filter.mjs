@@ -27,7 +27,7 @@ function newFeedsHtml() {
     feedContainer.append(newFeeds, filterCoontainer);
 }
 
-export {newFeedsHtml}
+export {newFeedsHtml, feedContainer}
 
 
 
