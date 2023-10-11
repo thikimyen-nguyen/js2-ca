@@ -4,6 +4,7 @@ import { getFeedPostsUrl, getFoodPostsUrl, getGamePostsUrl, createPostUrl } from
 import { createPostForm, postForm} from "./posts/create-new-post.mjs";
 import { createPost } from "./components/fetch-token.mjs";
 import { showUserName, showAvatar } from "./profile/show-user.mjs";
+import { search } from "./posts/search.mjs";
 // Show new feeds area UI
 newFeedsHtml();
 
@@ -52,3 +53,14 @@ postForm.addEventListener("submit", function getFormValue(event) {
 // show current user
 showUserName();
 showAvatar();
+
+
+
+// get input search and pass as param
+const searchInput = document.querySelector(".search-form");
+searchInput.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const searchValue = event.target.search.value;
+  const results = search(searchValue);
+  console.log(results)
+})
