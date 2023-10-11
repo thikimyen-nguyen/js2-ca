@@ -7,7 +7,7 @@ const postsContentContainer = document.querySelector(".posts");
 
 async function showPosts(url) {
     const posts = await getPosts(url);
-    console.log(posts)
+    localStorage.setItem("currentPosts", JSON.stringify(posts));
     postsHtml(posts);
   }
 
