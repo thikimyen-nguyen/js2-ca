@@ -20,13 +20,14 @@ function checkLength(value, len) {
 function validateUserName(userName) {
     const regEx = /^[\w]+$/;
     const patternMatches = regEx.test(email.value);
-    if (checkLength(userName.value, 20) === true || patternMatches !== true) {
-        nameError.style.display = "block";
-        return false;
-    } else {
-        
+    if (checkLength(userName.value, 20) !== true && patternMatches !== true) {
         nameError.style.display = "none";
         return true;
+       
+    } else {
+        nameError.style.display = "block";
+        return false;
+       
     }
 }
 // Validate register email

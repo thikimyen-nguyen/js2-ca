@@ -48,6 +48,7 @@ createAccButton.onclick = function validateRegister(event) {
               const response = await fetch(url, postData);
               const json = await response.json();
               if (response.ok) {
+                alert("Your account was registered successfully!")
                 loginForm.classList.remove("d-none");
                 createAccountForm.classList.add("d-none");
               }
@@ -82,8 +83,10 @@ async function loginUser(url, data) {
         localStorage.setItem("user", name);
         localStorage.setItem("avatar", avatar);
         // Redirect to feed page
-        if (accessToken) {
+        if (response.ok) {
                 window.location.href = "./feed/index.html"
+            } else {
+                alert("Please log in again with correct email or password")
             }
         return json;
     } catch (error) {
