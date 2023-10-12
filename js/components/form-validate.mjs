@@ -18,18 +18,20 @@ function checkLength(value, len) {
     }
 }
 function validateUserName(userName) {
-    
-    if (checkLength(userName.value, 4) === true) {
-        nameError.style.display = "none";
-        return true;
-    } else {
+    const regEx = /^[\w]+$/;
+    const patternMatches = regEx.test(email.value);
+    if (checkLength(userName.value, 20) === true || patternMatches !== true) {
         nameError.style.display = "block";
         return false;
+    } else {
+        
+        nameError.style.display = "none";
+        return true;
     }
 }
 // Validate register email
 function validateEmail(email) {
-    const regEx = /\S+@stud.noroff\.no$/;
+    const regEx = /^[\w\-.]+@(stud\.)?noroff\.no$/;
     const patternMatches = regEx.test(email.value);
  
     if (patternMatches === true) {
