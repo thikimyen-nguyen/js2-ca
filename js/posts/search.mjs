@@ -14,7 +14,7 @@ function search(param) {
   const filteredPosts = posts.filter((post) => {
    
     if (post.body !== null && post.title !== null) {
-      if (post.title.includes(param) || post.body.includes(param) || post.tags.join(" ").includes(param)) {
+      if (post.title.toLowerCase().includes(param) || post.body.toLowerCase().includes(param) || post.tags.join(" ").toLowerCase().includes(param)) {
         return post
       }
     }
@@ -27,7 +27,7 @@ const searchInput = document.querySelector(".search-form");
 function getSearchResults() {
     searchInput.addEventListener("submit", function (event) {
         event.preventDefault();
-        const searchValue = event.target.search.value;
+        const searchValue = event.target.search.value.toLowerCase();
         const results = search(searchValue);
         const numberOfResults = results.length;
         searchInput.reset();
