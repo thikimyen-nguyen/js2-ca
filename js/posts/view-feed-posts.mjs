@@ -4,12 +4,26 @@ import { timeAgo } from "../components/time-calculator.mjs";
 
 // fetch posts to show on feed page
 const postsContentContainer = document.querySelector(".posts");
+
+/**
+ * Main funtion to get required posts and show them in html
+ * @date 2023-10-12
+ * @param {string} url This is link to send to API for required posts
+ * Set all posts to local storage for later search function
+ * Show posts with postsHtml(posts)
+ */
 async function showPosts(url) {
     const posts = await getPosts(url);
     localStorage.setItem("currentPosts", JSON.stringify(posts));
     postsHtml(posts);
-  }
+}
 
+/**
+ * Create html for displaying posts with param as an array of posts
+ * @date 2023-10-12
+ * @param {Array} posts This is an array of pots after fetching data from API or from local storage
+ * Show posts area in html
+ */
 function postsHtml(posts) {
 for (let i = 0; i < posts.length; i++) {
     const {title, body, author, created, _count, media, id} = posts[i];

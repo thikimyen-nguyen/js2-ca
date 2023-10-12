@@ -3,20 +3,31 @@ const currentUserName = localStorage.getItem("user");
 const currentUserAvatar = JSON.parse(localStorage.getItem("avatar"));
 
 
-// show current user name
+
 const currentUserNameContainer = document.querySelector(".user-name");
+/**
+ * Get current username from local storage and Show in UI
+ * 
+ */
 function showUserName() {
   currentUserNameContainer.innerHTML = currentUserName;
 }
-// show title for current user
+
 const userTitle = document.querySelector("title");
+/**
+ * show title of profile page with current username
+ */
 function showTitle() {
   userTitle.innerText = `bingme |${currentUserName}  Profile`;
 }
 
-// show user profile avatar
+
 const avatarContainer = document.querySelector(".custom-avatar");
 
+/**
+ * Get avatar from current user profile and Show user profile avatar
+ * There will be fix avatar if value = null
+ */
 function showAvatar() {
   const userAvatar = document.createElement("img");
   try {

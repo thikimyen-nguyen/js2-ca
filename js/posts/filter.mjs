@@ -1,5 +1,5 @@
 
-// Create HTML for newfeeds filter
+// Create HTML for newfeeds header
 const feedContainer = document.querySelector(".feeds");
 feedContainer.classList.add("d-flex", "flex-row", "justify-content-between", "bg-white", "p-3");
 const newFeeds = document.createElement("h1");
@@ -21,6 +21,11 @@ optionTwo.value = "game";
 optionTwo.textContent = "Game Posts";
 
 
+/**
+ * Create html for new feed posts header and filter options for posts
+ * @date 2023-10-12
+ * @returns {any}
+ */
 function newFeedsHtml() {
     filterCoontainer.append(defaultOption, optionOne, optionTwo);
 

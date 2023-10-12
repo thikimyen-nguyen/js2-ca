@@ -8,8 +8,13 @@
 
 // get source of posts to be searched
 const posts = JSON.parse(localStorage.getItem("currentPosts"));
-console.log(posts);
-// create function to filter posts with param
+
+/**
+ * Filter posts with param which is input from search form
+ * @date 2023-10-12
+ * @param {string} param This is search input from user
+ * @returns {Array} return an array of posts after filtering
+ */
 function search(param) {
   const filteredPosts = posts.filter((post) => {
    
@@ -22,8 +27,15 @@ function search(param) {
   return filteredPosts
 }
 
-// get input search and pass as param
+
 const searchInput = document.querySelector(".search-form");
+/**
+ * Get input search value from user and pass as param in search(param)
+ * Get results as an array of posts
+ * get the number of posts 
+ * reset search form
+ * Show the number of posts result and show posts in html with postsHtml()
+ */
 function getSearchResults() {
     searchInput.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -35,9 +47,7 @@ function getSearchResults() {
         postsContentContainer.innerHTML = "";
         feedContainer.classList.add("text-primary", "fs-3");
         feedContainer.innerHTML = `${numberOfResults} results were found.`;
-          postsHtml(results);
-        
-      
+        postsHtml(results);
       })
 }
 export {search, getSearchResults}

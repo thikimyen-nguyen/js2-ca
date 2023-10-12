@@ -1,8 +1,12 @@
-// UI for create post form
 const addPostButton = document.querySelector(".add-post-button");
 const postForm = document.querySelector(".create-post-form");
 const cancelFormButton = document.querySelector("#cancel-form-button");
 
+/**
+ * Display and hide form to create new post on UI
+ * @date 2023-10-12
+ * @returns {any}
+ */
 function createPostForm() {
   postForm.classList.add("d-none");
 

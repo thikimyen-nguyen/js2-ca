@@ -12,6 +12,12 @@ newFeedsHtml();
 // filter and show posts
 const selectFilter = document.querySelector("select");
 
+/**
+ * Show posts on feed page
+ * @date 2023-10-12
+ * Get all feed posts
+ * Show posts as filter options
+ */
 async function showFeedHtml() {
     await showPosts(getFeedPostsUrl);
     selectFilter.addEventListener("change", function() {
@@ -33,7 +39,12 @@ showFeedHtml();
 // show form to create post
 createPostForm();
 
-// get form input and post data to API
+
+/**
+ * Get input from new post form and pass as param data to createPost(url, data)
+ * @date 2023-10-12
+ * 
+ */
 postForm.addEventListener("submit", function getFormValue(event) {
     event.preventDefault();
     const form = event.target;
@@ -45,7 +56,6 @@ postForm.addEventListener("submit", function getFormValue(event) {
 
     const post = Object.fromEntries(formData.entries());
     post.tags = tagsArray;
-    console.log(post);
     createPost(createPostUrl, post);
     alert("Your post was created!");
     window.location.reload();

@@ -23,7 +23,13 @@ const editForm = document.querySelector(".edit-post-form");
 const updateForm = document.querySelector(".update-form");
 updateForm.classList.add("d-none");
 
-// Fetch a single post with url and id
+
+/**
+ * Fetch a single post with id and show html
+ * @date 2023-10-13
+ * @param {string} url This is link to API with post id
+ * @returns {object} Return an object post and show it in html
+ */
 async function showSinglePost(url) {
   const post = await getPosts(url);
   // Get post as object

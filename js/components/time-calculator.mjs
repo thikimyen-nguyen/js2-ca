@@ -1,4 +1,10 @@
-// Function to calculate and display time ago
+
+/**
+ * Function to calculate and display time ago to posts
+ * @date 2023-10-12
+ * @param {string} dateString This is the date and time when the post was created
+ * @returns {any} Return time ago
+ */
 function timeAgo(dateString) {
     const currentDate = new Date();
     const postDate = new Date(dateString);

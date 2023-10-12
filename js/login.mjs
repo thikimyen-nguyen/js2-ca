@@ -17,9 +17,15 @@ swithToLoginBtn.onclick = function () {
     createAccountForm.classList.add("d-none");
 }
 
-// Create account
+
 const createAccButton = document.querySelector("#createAcc-btn");
 
+/**
+ * Register new account
+ * @date 2023-10-13
+ * Get form input value and create userRegisterInfo object
+ * Pass userRegisterInfo as param data in registerUser(url, data) 
+ */
 createAccButton.onclick = function validateRegister(event) {
     event.preventDefault();
     validateUserName(userName);
@@ -34,7 +40,15 @@ createAccButton.onclick = function validateRegister(event) {
             "email": email.value,
             "password": password.value,
         };
-        console.log(userRegisterInfo);
+        
+        /**
+         * 描述
+         * @date 2023-10-13
+         * @param {string} url This is link to  post to API
+         * @param {object} data This is user register info
+         * @returns {object} Return an object with successful registered info of new user
+         * 
+         */
         async function registerUser(url, data) {
             try {
               const postData = {
@@ -65,8 +79,15 @@ createAccButton.onclick = function validateRegister(event) {
 // Login
 const loginButton = document.querySelector("#login-btn");
 
-// Fetch post login data
 
+
+/**
+ * Fetch post login data
+ * @date 2023-10-13
+ * @param {string} url This is link to  post to API
+ * @param {object} data This is user info to login
+ * @returns {object} Return an object with current login user profile
+ */
 async function loginUser(url, data) {
     try {
         const postData = {
