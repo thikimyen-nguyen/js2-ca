@@ -75,9 +75,11 @@ async function showSinglePost(url) {
   postOptions.addEventListener("change", function() {
     const selectedValue = postOptions.value;
     if (selectedValue === "delete") {
-      deletePost(editUrl);
-      postContentContainer.innerHTML = "Your post was deleted!";
-      postContentContainer.classList.add("text-center");
+      // deletePost(editUrl);
+      alert("Your post was deleted!");
+      window.location.href = "./index.html";
+      // postContentContainer.innerHTML = "Your post was deleted!";
+      // postContentContainer.classList.add("text-center");
     } else if (selectedValue === "edit") {
       // hide post and show edit form
       updateForm.classList.remove("d-none");

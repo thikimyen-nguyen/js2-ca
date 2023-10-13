@@ -42,7 +42,7 @@ createAccButton.onclick = function validateRegister(event) {
         };
         
         /**
-         * 描述
+         * Send a POST to API to register new user
          * @date 2023-10-13
          * @param {string} url This is link to  post to API
          * @param {object} data This is user register info
