@@ -5,7 +5,7 @@
 const givenToken = localStorage.getItem("accessToken");
 
 // GET header
-const getData = {
+const getPostsOption = {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -23,8 +23,8 @@ const getData = {
  */
 async function getPosts(url) {
 try {
-    getData;
-    const response = await fetch(url, getData);
+  getPostsOption;
+    const response = await fetch(url, getPostsOption);
     const posts = await response.json();
     return posts;
 } catch (error) {
@@ -141,4 +141,4 @@ async function updatePost(url, data) {
     console.log(error);
   }
 }
-export {givenToken, getData, getPosts, createPost, deletePost, updatePost}
+export {givenToken, getPostsOption, getPosts, createPost, deletePost, updatePost}
