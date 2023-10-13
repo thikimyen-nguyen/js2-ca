@@ -79,11 +79,9 @@ async function showSinglePost(url) {
     postOptions.addEventListener("change", function() {
       const selectedValue = postOptions.value;
       if (selectedValue === "delete") {
-        // deletePost(editUrl);
+        deletePost(editUrl);
         alert("Your post was deleted!");
         window.location.href = "./index.html";
-        // postContentContainer.innerHTML = "Your post was deleted!";
-        // postContentContainer.classList.add("text-center");
       } else if (selectedValue === "edit") {
         // hide post and show edit form
         updateForm.classList.remove("d-none");
@@ -99,7 +97,8 @@ async function showSinglePost(url) {
       }
     })
     // get form input and post data to API
-    editForm.addEventListener("submit", function getFormValue(event) {
+    editForm.addEventListener("submit", function updateSinglePost(event) {
+      try {
       event.preventDefault();
       const form = event.target;
       const formData = new FormData(form);
@@ -110,10 +109,15 @@ async function showSinglePost(url) {
 
       const updatedPost = Object.fromEntries(formData.entries());
       updatedPost.tags = tagsArray;
-      console.log(updatedPost);
+     
       updatePost(editUrl, updatedPost);
       alert("Your post was updated!");
       window.location.reload();
+      } catch (error) {
+        loader.classList.add("text-danger");
+        loader.innerHTML = message("error", error);
+      }
+      
     })
 
     // post header - avatar

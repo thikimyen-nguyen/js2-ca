@@ -20,7 +20,7 @@ createPostForm();
  * @date 2023-10-13
  * 
  */
-postForm.addEventListener("submit", function getFormValue(event) {
+postForm.addEventListener("submit", function createNewPost(event) {
   try {
     event.preventDefault();
     const form = event.target;
