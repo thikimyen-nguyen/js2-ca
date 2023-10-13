@@ -18,13 +18,14 @@ const loginPassword = document.querySelector("#login-password");
  * @param {number} len This is a number to check the length of the value
  * @returns {boolean} Return a true/false of comparison
  */
-function checkLength(value, len) {
-    if (value.trim().length > len) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function checkLength(value, len) {
+//     if (value.trim().length > len) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+const checkLength = (value, len) => value.trim().length > len;
 
 /**
  * Validate username input whether is has max 20 characters and contain punctuation symbols apart from underscore (_) 
