@@ -30,7 +30,7 @@ const avatarContainer = document.querySelector(".custom-avatar");
  */
 function showAvatar() {
   const userAvatar = document.createElement("img");
-  try {
+
     if (currentUserAvatar === null) {
       // photo from https://www.pexels.com/photo/road-among-trees-against-snowy-mountains-4993220/
 
@@ -38,9 +38,6 @@ function showAvatar() {
     } else {
       userAvatar.src = currentUserAvatar;
     }
-  } catch (error) {
-    console.error("An error occurred:", error);
-  }
   userAvatar.alt = "user avatar";
   avatarContainer.append(userAvatar);
 }

@@ -5,7 +5,7 @@ import { createPostForm, postForm} from "./posts/create-new-post.mjs";
 import { createPost } from "./components/fetch-token.mjs";
 import { showUserName, showAvatar } from "./profile/show-user.mjs";
 import { getSearchResults } from "./posts/search.mjs";
-
+import { loader, message } from "./components/message.mjs";
 // Show new feeds area UI
 newFeedsHtml();
 
@@ -19,7 +19,9 @@ const selectFilter = document.querySelector("select");
  * Show posts as filter options
  */
 async function showFeedHtml() {
-    await showPosts(getFeedPostsUrl);
+    loader.innerHTML = "";
+    try {
+        await showPosts(getFeedPostsUrl);
     selectFilter.addEventListener("change", function() {
         const selectedValue = selectFilter.value;
         if (selectedValue === "food" ) {
@@ -33,6 +35,11 @@ async function showFeedHtml() {
             showPosts(getFeedPostsUrl);
         };
     })
+    } catch (error) {
+        loader.classList.add("text-danger");
+        loader.innerHTML = message("error", error);
+    }
+    
 }
 showFeedHtml();
 
@@ -46,19 +53,25 @@ createPostForm();
  * 
  */
 postForm.addEventListener("submit", function getFormValue(event) {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
-
-    // Convert the "tags" value to an array
-    const tags = formData.get("tags");
-    const tagsArray = tags.split(',').map(tag => tag.trim());
-
-    const post = Object.fromEntries(formData.entries());
-    post.tags = tagsArray;
-    createPost(createPostUrl, post);
-    alert("Your post was created!");
-    window.location.reload();
+    try {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+    
+        // Convert the "tags" value to an array
+        const tags = formData.get("tags");
+        const tagsArray = tags.split(',').map(tag => tag.trim());
+    
+        const post = Object.fromEntries(formData.entries());
+        post.tags = tagsArray;
+        createPost(createPostUrl, post);
+        alert("Your post was created!");
+        window.location.reload();
+    } catch (error) {
+        loader.classList.add("text-danger");
+        loader.innerHTML = message("error", error);
+    }
+   
   })
   
 // show current user

@@ -22,14 +22,15 @@ const getPostsOption = {
  * @returns {Array} This is an array of post objects. Later using these as param in showPosts function
  */
 async function getPosts(url) {
-try {
   getPostsOption;
-    const response = await fetch(url, getPostsOption);
-    const posts = await response.json();
+  const response = await fetch(url, getPostsOption);
+  const posts = await response.json();
+  if (response.ok) {
     return posts;
-} catch (error) {
-    console.log(error);
-}
+  } else {
+    throw new Error("Could not get posts!")
+  }
+
 }
 
 
@@ -58,7 +59,7 @@ try {
  * ```
  */
 async function createPost(url, data) {
-  try {
+ 
     const postData = {
       method: 'POST',
       headers: {
@@ -69,10 +70,12 @@ async function createPost(url, data) {
     };
     const response = await fetch(url, postData);
     const json = await response.json();
-    return json;
-  } catch (error) {
-    console.log(error);
-  }
+    
+    if (response.ok) {
+      return json;
+    } else {
+      throw new Error("Could not create a new post!")
+    }
 }
 
 
@@ -83,7 +86,7 @@ async function createPost(url, data) {
  * @returns {} Return nothing
  */
 async function deletePost(url) {
-  try {
+ 
     const postData = {
       method: 'DELETE',
       headers: {
@@ -93,10 +96,12 @@ async function deletePost(url) {
     };
     const response = await fetch(url, postData);
     const json = await response.json();
-    return json;
-  } catch (error) {
-    console.log(error);
-  }
+   
+    if (response.ok) {
+      return json;
+    } else {
+      throw new Error("Could not delete a post!")
+    }
 }
 
 
@@ -124,7 +129,7 @@ async function deletePost(url) {
  * ```
  */
 async function updatePost(url, data) {
-  try {
+ 
     const postData = {
       method: 'PUT',
       headers: {
@@ -136,9 +141,10 @@ async function updatePost(url, data) {
 
     const response = await fetch(url, postData);
     const json = await response.json();
-    return json;
-  } catch (error) {
-    console.log(error);
-  }
+    if (response.ok) {
+      return json;
+    } else {
+      throw new Error("Could not update a post!")
+    }
 }
 export {givenToken, getPostsOption, getPosts, createPost, deletePost, updatePost}

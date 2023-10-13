@@ -4,6 +4,7 @@ import { createPost } from "./components/fetch-token.mjs";
 import { showPosts, postsContentContainer,postsHtml} from "./posts/view-feed-posts.mjs";
 import { profileUrl, authorParam, createPostUrl} from "./components/api-url.mjs";
 import { getSearchResults } from "./posts/search.mjs";
+import { loader, message } from "./components/message.mjs";
 // show current user
 showUserName();
 showTitle();
@@ -20,6 +21,7 @@ createPostForm();
  * 
  */
 postForm.addEventListener("submit", function getFormValue(event) {
+  try {
     event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
@@ -31,11 +33,26 @@ postForm.addEventListener("submit", function getFormValue(event) {
     createPost(createPostUrl, post);
     alert("Your post was created!");
     window.location.reload();
+  } catch (error) {
+    loader.classList.add("text-danger");
+    loader.innerHTML = message("error", error);
+  }
+    
   })
 
 // show user posts only
-const currentUserUrl = `${profileUrl}/${currentUserName}/posts${authorParam}`;
-showPosts(currentUserUrl);
+async function showUserPosts() {
+  loader.innerHTML = "";
+  try {
+    const currentUserUrl = `${profileUrl}/${currentUserName}/posts${authorParam}`;
+    await showPosts(currentUserUrl);
+   
+  } catch (error) {
+    loader.classList.add("text-danger");
+    loader.innerHTML = message("error", error);
+  }
+}
+showUserPosts();
 
 
 // search funtion

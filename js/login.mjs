@@ -1,6 +1,6 @@
 import {validateUserName, validateEmail, validatePassword, userName, email, password, emailLogin, loginPassword } from "./components/form-validate.mjs";
 import { registerUrl, loginUrl } from "./components/api-url.mjs";
-
+import { loader, message } from "./components/message.mjs";
 
 // switch forms between create account and login
 const loginForm = document.querySelector(".login");
@@ -65,10 +65,13 @@ createAccButton.onclick = function validateRegister(event) {
                 alert("Your account was registered successfully!")
                 loginForm.classList.remove("d-none");
                 createAccountForm.classList.add("d-none");
+              } else {
+                throw new Error("Could not create account. It may be existed!")
               }
               return json;
             } catch (error) {
-              console.log(error);
+                loader.classList.add("text-danger");
+                loader.innerHTML = message("error", error);
             }
         }
         registerUser(registerUrl, userRegisterInfo);
@@ -107,11 +110,12 @@ async function loginUser(url, data) {
         if (response.ok) {
                 window.location.href = "./feed/index.html"
             } else {
-                alert("Please log in again with correct email or password")
+                throw new Error("Please log in again with correct email or password");
             }
         return json;
     } catch (error) {
-        console.log(error);
+        loader.classList.add("text-danger");
+        loader.innerHTML = message("error", error);
     }
     }
 
